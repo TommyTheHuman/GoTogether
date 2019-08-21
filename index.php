@@ -66,7 +66,7 @@
             <p> immagine 2</p>
         </div>
         <div class="box">
-            <p> immagine 3</p>
+            <p> immagine 34</p>
         </div>
         <div class="box">
             <h3 class="AzoSans">DESTINAZIONI POPOLARI</h3>
