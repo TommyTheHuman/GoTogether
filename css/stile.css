@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+}
+
+/* HEADER */
+header {
+    background-image: url(../immagini/background/immagineHeader.jpeg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-attachment: fixed;
+}
+
+.ImmagineBackground {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#Logo {
+    width: 30%;
+    margin: 5rem;
+}
+
+#navbg {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    justify-content: flex-end;
+    align-items: middle;
+}
+
+/* BODY */
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.box {
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.box h3 {
+    text-align: center;
+}
+
+#posti .box {
+    width: 25%;
+}
+
+.boxTesto {
+    margin: 1.5rem;
+}
+
+.container {
+    max-width: 100%;
+    width: 900px;
+    padding: auto; ///
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 17px;
+    margin: auto;
+}
+
+/* NAV */
+
+
+.NavBar {
+    float: right;
+    margin: 1.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+}
+
+nav ul li {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+nav li a {
+    display: block;
+    color: rgba(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+.sinistra {
+    float: left;
+}
+
+.RoundImage{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+

@@ -1,0 +1,198 @@
+/* nav */
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 2px solid #f88860;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.mainNav > .logo {
+    display: inline-block;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+
+.mainNav > .logo > a {
+    display: inline-block;
+}
+
+.mainNav > .logo > a img {
+    max-width: 100%;
+    max-width: 47px;
+}
+
+.mainNav > .voices,
+.mainNav > .voices li,
+.mainNav > .voices li a {
+    display: flex;
+    align-items: center
+}
+
+.mainNav > .voices ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.mainNav .voices a {
+    color: #f88860;
+    text-decoration: none;
+}
+
+.RoundImage {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+/* Proposta Da Accettare */
+
+.proposta_da_accettare {
+    margin: 0 auto;
+    width: 50%;
+    height: 200px;
+    position: relative;
+    background-color: aquamarine;
+}
+
+.proposta_da_accettare > a {
+    position: absolute;
+    right: 10px;
+}
+
+.nome {
+    position: absolute;
+    right: 5px;
+    top: 110px;
+}
+
+.luogo {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.data {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+}
+
+.accetta {
+    position: absolute;
+    right: 25px;
+    top: 160px;
+}
+
+.rifiuta {
+    position: absolute;
+    right: 100px;
+    top: 160px;
+}
+
+/* Proposte Proprie*/
+
+.proposte_proprie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.proposta_propria{
+    background-color: aquamarine;
+    height: 100px;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* Partecipanti Alle Tue Proposte*/
+
+.partecipanti {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 50%;
+    position: relative;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    min-height: 200px;
+    justify-content: space-evenly;
+}
+
+.noflex {
+    display: block;
+}
+
+.nazione {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.citta_partecipanti {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+
+.periodo {
+    position: absolute;
+    top: 5px;
+    right: 50px;
+}
+
+.persona {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* Proposte Partecipate */
+
+.proposta_partecipata {
+    background-color: aquamarine;
+    position: relative;
+    height: 200px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.proposta_partecipata > a {
+    position: absolute;
+    right: 10px;
+}
+
+.nome_proponente {
+    position: absolute;
+    right: 5px;
+    top: 120px;
+}
+
+.luogo_proposto {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.periodo_proposto {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+}
+
+.costo_proposto {
+    position: absolute;
+    top: 90px;
+    left: 5px;
+}

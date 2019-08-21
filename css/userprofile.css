@@ -1,0 +1,69 @@
+/* NavBar*/
+
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 2px solid #f88860;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.mainNav > .logo {
+    display: inline-block;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+
+.mainNav > .logo > a {
+    display: inline-block;
+}
+
+.mainNav > .logo > a img {
+    max-width: 100%;
+    max-width: 47px;
+}
+
+.mainNav > .voices,
+.mainNav > .voices li,
+.mainNav > .voices li a {
+    display: flex;
+    align-items: center
+}
+
+.mainNav > .voices ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.mainNav .voices a {
+    color: #f88860;
+    text-decoration: none;
+}
+
+.RoundImage {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+/* Ultime Proposte 1*/
+
+.ultime_proposte1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.proposta1 {
+    background-color: aquamarine;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+}
