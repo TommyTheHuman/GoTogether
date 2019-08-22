@@ -14,7 +14,10 @@
     $user->nome = $_SESSION["nome"];
     $user->cognome = $_SESSION["cognome"];
     $user->profileImage = './upload/'.$_SESSION['immagine'];
-    echo $id;
+	echo $id;
+	if($id == $idutente){
+		header('Location: ./profilo.php');
+	}
     
 ?>
 

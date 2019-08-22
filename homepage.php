@@ -25,14 +25,10 @@
     <title>Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
-    <!-- css reset -->
-    <link rel="stylesheet" href="./css/normalize/normalize.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="./css/formReset.css" type="text/css" media="screen">
-    <!-- css custom -->
+    <?php include_once './include/head.html' ?>
+	<!-- css custom -->
     <link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen">
     <link rel="stylesheet" href="./css/HomePage.css" type="text/css" media="screen">
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 </head>
 
 <body id="bod" class="contenitore">

@@ -261,7 +261,13 @@ aside.ricerca {
     text-decoration: none;
     font-weight: 700;
     text-decoration-color: black;
-    color: black;
+	color: black;
+}
+
+.card .right .row .proponente .nome {
+	padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
 }
 
 .immagine {
@@ -309,3 +315,5 @@ aside.ricerca {
 .mainContainer > div {
     width: 100%;
 }
+
+

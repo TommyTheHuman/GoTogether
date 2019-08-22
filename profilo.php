@@ -19,10 +19,11 @@
 <html lang="it">
 
 <head>
-    <meta charset="utf-8">
-    <title>NOME DEL SITO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen"> <!-- css -->
+	<meta charset="utf-8">
+	<title>NOME DEL SITO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen"> <!-- css -->
+	<?php include_once './include/head.html' ?>
 </head>
 
 <body onload=" <?php
@@ -33,64 +34,63 @@
             
         }
     ?>">
-    <header>
-    <nav class="mainNav">
-        <div class="logo">
-            <a href="./homepage.php">
-                <img src="./immagini/logoicon.png">
-            </a>
-        </div>
-        <div class="voices">
-            <ul>
-                <li>
-                    <a href="./profilo.php">
-                        <?php echo $user->nome." ".$user->cognome ?>
-                        <img class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="cambioimmagine" style="display: none;" id="invisibile">
-    <form action="./php/imageupload.php" name="mio_form" method="post" enctype="multipart/form-data">
-        <fieldset name="myData">
-            <legend>Dati personali</legend>
-            <div>
-                <label>
-                    immagine:<br>
-                    <input name="file" type="file"><br>
-                </label>
-            </div>
-            <br>
-            <div id="form_right">
-                <div id="buttons">
-                    <span>Pulsanti:</span><br>
-                    <input name="invio" value="INVIA" type="submit">&nbsp;
-                </div>
-            </div>
-        </fieldset>
-    </form>
-    </div>
-    <input onclick="Appear()" value="Cambio Immagine" type="button">
-    <?php Bandiere(); ?>
-    </header>
-    <script type="text/javascript" src="./js/controlloform.js"></script>
-    <?php
-        echo "<div class='proposte_da_accettare'>";
-                ProposteDaAccettare();
-        echo "</div>";
-        
-        echo "<div class='proposte_proprie'>";
-                ProposteProprie();
-        echo "</div>";
-                
-        PropostePartecipate();
-        
-        echo "<div class='partecipanti_tue_proposte'>";
-        PartecipantiAllaTuaProposta();
-        echo "</div>"
-    ?>
-    <script type="text/javascript" src="./js/appear.js"></script>
-</body>
+	<header>
+		<nav class="mainNav">
+			<div class="logo">
+				<a href="./homepage.php">
+					<img src="./immagini/logoicon.png">
+				</a>
+			</div>
+			<div class="voices">
+				<ul>
+					<li>
+						<button class="openmodal" type="button">Impostazioni</button>
+					</li>
+					<li>
+						<a href="./profilo.php">
+							<?php echo $user->nome." ".$user->cognome ?>
+							<img class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<script type="text/javascript" src="./js/controlloform.js"></script>
+	<?php
+		Bandiere();
+		ProposteDaAccettare();
+		
+		
+	?>
+	<div class="tab">
+		<button class="tablinks active">
+			Proposte
+		</button>
+		<button class="tablinks">
+			Partecipazioni
+		</button>
+	</div>
+	<div class="tabcontent visible">
+		<?php ProposteProprie(); ?>
+	</div>
 
+	<div class="tabcontent">
+		<?php PropostePartecipate(); ?>
+	</div>
+
+	<div class="modal" id="modal">
+		<div class="modal__content">
+			<button class="openmodal" type="button">X</button>
+			<div class="modal__innerContent">
+				
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/appear.js"></script>
+	<script type="text/javascript" src="./js/tab.js"></script>
+	<script type="text/javascript" src="./js/modal.js"></script>
+	<script type="text/javascript" src="./js/partecipanti.js"></script>
+</body>
 </html>
