@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <form action="./offercontrol.php" name="offer" method="post" enctype="multipart/form-data">
+    <form name="offer" method="post" enctype="multipart/form-data">
         <fieldset name="questionario">
             <legend>Questionario:</legend>
             <div id=form_left>
@@ -31,7 +31,7 @@
                     <div>
                         <label>
                             città: *<br>
-                            <input name="citta" size="15" type="text" placeholder="Es: Milano" pattern="[a-zA-Z\s]+" required><br>
+                            <input name="citta" size="15" type="text" placeholder="Es: Milano" pattern="[a-zA-Z\s]+" ><br>
                         </label>
                         <label>
                             Numero peronse: *<br>
@@ -43,11 +43,11 @@
                         </label>
                         <label>
                             Data di partenza:<br>
-                            <input name="partenza" type="date" onkeydown="return false" min=""><br>
+                            <input name="partenza" id= "partenza" type="date" onkeydown="return false" min=""><br>
                         </label>
                         <label>
                             Data di ritorno:<br>
-                            <input name="ritorno" type="date" min="" onkeydown="return false"><br>
+                            <input name="ritorno" id= "ritorno" type="date" min="" onkeydown="return false"><br>
                         </label>
                         <label for="country">Country<br>
 
@@ -265,7 +265,7 @@
             <div id="form_right">
                 <div id="buttons">
                     <span>Pulsanti:</span><br>
-                    <input name="invio" value="INVIA" type="submit">&nbsp;
+                    <input name="invio" value="INVIA" type="submit" onclick="controlloData()">
                 </div>
             </div>
         </fieldset>

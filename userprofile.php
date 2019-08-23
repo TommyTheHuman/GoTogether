@@ -14,7 +14,6 @@
     $user->nome = $_SESSION["nome"];
     $user->cognome = $_SESSION["cognome"];
     $user->profileImage = './upload/'.$_SESSION['immagine'];
-	echo $id;
 	if($id == $idutente){
 		header('Location: ./profilo.php');
 	}
@@ -27,7 +26,8 @@
 <head>
     <meta charset="utf-8">
     <title>NOME DEL SITO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php include_once './include/head.html' ?>
     <link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen"> <!-- css -->
     <link rel="stylesheet" href="./css/userprofile.css" type="text/css" media="screen"> <!-- css -->
 
@@ -55,16 +55,12 @@
     </header>
     <?php
     echo "<div class='InfoProfilo'>";
-    InfoProfilo($id);
+	InfoProfilo($id);
+	echo '<div class="bottoneFeed"><button type="button" onlick="./php/feedback.php?idprop='.$id.'&idutente='.$idutente.'">Lascia Un Feedback</button></div>';
     echo "</div>";
-    Bandiere1();
-    echo "<div class='ultime_proposte1'>";
+    	Bandiere1();
         UltimeProposte1();
-    echo "</div>";
-    echo '<form action="./php/feedback.php?idprop='.$id.'&idutente='.$idutente.'" name="mio_form" method="post">
-        <input name="bottone_sottometti" value="Lascia Un Feedback" type="submit">&nbsp;
-    </form>'
-    ?>
+	?>
 </body>
 
 </html>

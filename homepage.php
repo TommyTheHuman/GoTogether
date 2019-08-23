@@ -16,7 +16,6 @@
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -49,7 +48,7 @@
                         </a>
                     </li>
                     <li>
-                        <button data-function="logout">icon_logout</button>
+                        <img data-function="logout" class="logouticon" src="./immagini/icone/logout.png">
                     </li>
                 </ul>
             </div>

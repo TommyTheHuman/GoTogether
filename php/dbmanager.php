@@ -208,11 +208,12 @@
     function UltimeProposte1(){
         global $conn;
         global $id;
-        $proposte="select u.nome,u.cognome,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta
+        $proposte="select u.nome,u.cognome,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
         from proposte p inner join utente u on u.id=p.IdProponente
         where p.IdProponente = ".$id."
         order by p.IdProposta;";
-        $risultato = mysqli_query($conn, $proposte);    
+		$risultato = mysqli_query($conn, $proposte); 
+		echo"<div class='proposte'>";   
         while($riga=mysqli_fetch_row($risultato)) {
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
@@ -223,22 +224,54 @@
             $Costo=$riga[6];
             $PostiDisponibili=$riga[7];
             $idutente=$riga[8];
-            $idproposta=$riga[9];
-            echo    '<div class="proposta1" id='.$Nazione.'>
-                        <p class="luogo_1">'.$Nazione.' '.$Citta.'</p>
-                        <p class="periodo_1">'.$DataInizio.' '.$DataFine.'</p>
-                        <p class="costo_1">'.$Costo.'</p>
-                        <p class="posti_disponibili_1">'.$PostiDisponibili.'</p>';
-            if($PostiDisponibili != 0){
-                    echo   '<form action="./php/offeraccettation.php?proposta='.$idproposta.'&prop='.$idutente.'" name="mio_form" method="post">
-                            <input name="bottone_sottometti" value="Partecipa" type="submit">&nbsp;
-                        </form>
-                    </div>';
+			$idproposta=$riga[9];
+            $descrizione=$riga[10];
+            $titolo=$riga[11];
+            $immagine=$riga[12];
+            $giornoInizio= substr($DataInizio, 8, 2);
+            $giornoFine= substr($DataFine, 8, 2);
+            $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
+            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
+            if($PostiDisponibili > 0){
+                echo    '<div class="card" id='.$Nazione.'>
+                            <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
+                            <div class="right">
+                                <div class="row"> 
+                                    <h3>'.$titolo.'</h3>
+                                    <div class="data">
+                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
+                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="descrizione">
+                                        <p>'.$descrizione.'</P>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <img src="./immagini/icone/place.png">
+                                        <p>'.$Citta.'</p>
+                                    </div>
+                                    <div>
+                                        <img src="./immagini/icone/pers.png">
+                                        <p>'.$PostiDisponibili.'</p>
+                                    </div>
+                                    <div>
+                                        <img src="./immagini/icone/money.png">
+                                        <p>'.$Costo.'</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <form action="./php/offeraccettation.php?proposta='.$idproposta.'&prop='.$idutente.'" name="mio_form" method="post">
+                                        <input name="bottone_sottometti" value="Partecipa" type="submit">&nbsp;
+                                    </form>
+                                </div>
+                            </div>
+                        </div>';
             }
-            else{
-                echo '</div>';
-            }
-        }
+		};
+		echo "</div>";
     }
 
     function Bandiere(){
@@ -246,7 +279,7 @@
         $id = $_SESSION['id'];
         $bandiere= "select distinct Nazione
                     from proposte
-                    where current_date()<DataFine
+                    where current_date()>DataFine
                     and IdProponente='$id';";
         $query = mysqli_query($conn, $bandiere);
         $paesi_visitati = mysqli_num_rows($query);
@@ -264,12 +297,12 @@
         global $id;
         $bandiere= "select distinct Nazione
                     from proposte
-                    where current_date()<DataFine
+                    where current_date()>DataFine
                     and IdProponente='$id';";
         $query = mysqli_query($conn, $bandiere);
         $paesi_visitati = mysqli_num_rows($query);
         echo '<div class="bandiere">';
-        echo "<p>$paesi_visitati/194</p>";
+        echo "<div>$paesi_visitati/194</div>";
         while($riga=mysqli_fetch_row($query)){
             $nazione = $riga[0];
                 echo'<img src="./immagini/flags/'.$nazione.'.png">';
@@ -353,12 +386,14 @@
         $nome=$riga[0];
         $cognome=$riga[1];
         $image=$riga[2];
-        echo '<div>
-            <p>'.$nome.' '.$cognome.'</p>
-            </div>';
-        echo '<div>
+		echo '<div class="immagine_e_nome">
+				<div class="immagineprop">
             <img class="RoundImage" src="./upload/'.$image.'">
-            </div>';
+			</div>';
+		echo '<div>
+            <p>'.$nome.' '.$cognome.'</p>
+			</div>
+			</div>';
     }
 
     function MeteGettonate(){

@@ -39,7 +39,7 @@ function controllo() {
         return false;
     }else if (maschio == "" && femmina == "") {
         alert("Inserire Il sesso");
-        document.registrazione.Sesso.select();
+        document.getElementsByName("Sesso")[0].focus();
         return false;
     } else {
         document.registrazione.action = "../php/registercontrol.php";
