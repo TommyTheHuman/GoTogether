@@ -21,6 +21,7 @@
                         <p class="citta">'.$citta.'</p>
                         <p class="data_inizio">'.$DataInizio.'</p>
 						<p class="partecipanti" id="'.$IdProposta.'">'.$Partecipanti.'</p>
+						<button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$IdProposta.'\'">elimina la proposta</button>
                     </div>';
 		};
 		echo "</div>";

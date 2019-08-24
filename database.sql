@@ -42,7 +42,7 @@ create table propostedaaccettare(
     primary key(IdProposta, IdRichiedente),
     FOREIGN KEY (IdRichiedente) REFERENCES utente(id),
     FOREIGN KEY (IdProponente) REFERENCES utente(id),
-    FOREIGN KEY (IdProposta) REFERENCES proposte(IdProposta)
+    FOREIGN KEY (IdProposta) REFERENCES proposte(IdProposta) ON DELETE CASCADE
 )engine = innodb;
 
 drop table if exists feedback;

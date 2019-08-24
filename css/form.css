@@ -1,9 +1,10 @@
 body {
 	display: flex;
 	height: 100vh;
+	margin: 0;
 }
 
-.form_login {
+.form_register, .form_login, .form_offer {
 	display: flex;
 	border: solid 3px #909090;
 	background-color: #f5f5f5;
@@ -16,25 +17,28 @@ body {
 	vertical-align: middle;
 }
 
-.form_login form {
+.form_register form, .form_login form, .form_offer form {
 	margin: 0 auto;
 	text-align: center;
 	background-color: #f5f5f5;
 }
 
-.form_login form > div:first-child{
+.form_register form>div:first-child,
+.form_offer form>div:first-child {
 	    display: flex;
 		flex-direction: column;
 		margin-top: 20px;
 }
 
-.form_login > form label {
+.form_register>form label,
+.form_login>form label,
+.form_offer label {
 	font-weight: 700;
 	font-size: 13px;
 	margin-top: 10px;
 }
 
-.form_login > form label + input[type=text], input[type=password], input[type=email] {
+.form_register > form label + input[type=text], input[type=password], input[type=email] {
     font-size: 16px;
     width: 100%;
     border-bottom: 2px solid #ccc;
@@ -42,21 +46,76 @@ body {
 	color: #666;
 }
 
-.form_login>form label+input[type=date] {
+.form_register >form label+input[type=date] {
 	width: 100%;
     margin-top: 5px;
 	text-align: center;
 }
 
-.form_login .sesso {
+.form_register .sesso {
 	display: flex;
 	justify-content: space-around;
 }
 
-.form_login #buttons input {
+.form_register #buttons input,
+.form_login #buttons input,
+.form_offer #buttons input {
 	cursor: pointer;
 	border: solid 2px #909090;
 	border-radius: 3px;
 	height: 40px;
 	width: 80px
 }
+
+
+/* Form LogIn*/
+
+.form_login {
+	max-width: 400px;
+	max-height: 400px;
+}
+
+.form_login form {
+	margin: auto;
+}
+
+.form_login > form label + input[type=email], input[type=password]{
+	max-width: 300px;
+	margin-top: 14px;
+}
+
+
+/* Form Offer*/
+
+.form_offer {
+	max-height: 800px;
+}
+
+.form_offer > form label + input[type=text], input[type=numbers] {
+	font-size: 16px;
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+	margin-top: 4px;
+	color: #666;
+}
+
+.form_offer textarea {
+    max-width: 400px;
+    height: 201px;
+    width: 760px;
+    max-height: 150px;
+	margin-top: 10px;
+	border: solid 1px #909090;
+}
+
+input[type=file]{
+	display: none;
+}
+
+.custom_upload {
+	border: solid 1px #909090;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+}
+

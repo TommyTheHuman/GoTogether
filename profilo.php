@@ -81,7 +81,7 @@
 
 	<div class="modal" id="modal">
 		<div class="modal__content">
-			<button class="openmodal" type="button">X</button>
+			<button class="openmodal" type="button"><img class="immagine_modal" src="./immagini/icone/x.png"></button>
 			<div class="modal__innerContent">
 				
 			</div>

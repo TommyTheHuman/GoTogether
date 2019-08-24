@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<div class="form_login">
+	<div class="form_register">
 		<form name="registrazione" method="post">
 			<div>
 				<label>
