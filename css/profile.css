@@ -136,6 +136,34 @@
     padding: 5px;
 	margin: 0 1% 1% 1%;
 	box-sizing: border-box;
+	border-radius: 7px;
+}
+
+.proposta_propria .rows:first-child {
+	justify-content: flex-end; 
+	display: flex;
+	margin-right: -5px;
+}
+
+.proposta_propria .rows:first-child div:first-child {
+	display: flex;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	overflow: hidden;
+}
+
+.proposta_propria .rows:first-child time {
+	width: 75px;
+	text-align: center;
+	background-color: white;
+	border-top: solid #ff4c2b;
+	border-bottom: solid #ff4c2b;
+	border-left: solid #ff4c2b;
+}
+
+.proposta_propria .rows:nth-child(2) {
+	display: flex;
+	justify-content: space-around;
 }
 
 /* tab button*/

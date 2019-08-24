@@ -17,12 +17,14 @@
             $DataInizio=$riga[1];
 			$Partecipanti=$riga[2];
 			$IdProposta=$riga[3];
+			$giornoInizio= substr($DataInizio, 8, 2);
+            $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
             echo    '<div class="proposta_propria">
-                        <p class="citta">'.$citta.'</p>
-                        <p class="data_inizio">'.$DataInizio.'</p>
-						<p class="partecipanti" id="'.$IdProposta.'">'.$Partecipanti.'</p>
-						<button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$IdProposta.'\'">elimina la proposta</button>
-                    </div>';
+						<div class="rows"><div><time class="data">'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time></div></div>
+                        <div class="rows"><p class="citta">'.$citta.'</p>
+						<p class="partecipanti" id="'.$IdProposta.'">'.$Partecipanti.'</p></div>
+						<div class="rows"><button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$IdProposta.'\'">elimina la proposta</button></div>
+                    </button>';
 		};
 		echo "</div>";
     }
