@@ -472,4 +472,21 @@ input[type=file] {
 
 .modal__content ul {
 	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.modal__content ul li{
+	text-align: center;
+}
+
+.modal__content ul li img{
+	margin: 0;
+}
+
+.modal__content ul li a {
+    text-decoration: none;
+    font-weight: 700;
+    text-decoration-color: black;
+	color: black;
 }
