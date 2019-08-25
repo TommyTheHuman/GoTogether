@@ -35,7 +35,7 @@
         <nav class="mainNav">
             <div class="logo">
                 <a href="./homepage.php">
-                    <img src="./immagini/logoicon.png">
+                    <img alt="logo" src="./immagini/logoicon.png">
                 </a>
             </div>
             <div class="voices">
@@ -44,11 +44,11 @@
                     <li>
                         <a href="./profilo.php">
                             <?php echo $user->nome." ".$user->cognome ?>
-                            <img class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
+                            <img alt="immagine_profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
                         </a>
                     </li>
                     <li>
-                        <img data-function="logout" class="logouticon" src="./immagini/icone/logout.png">
+                        <img alt="icona_logout" data-function="logout" class="logouticon" src="./immagini/icone/logout.png">
                     </li>
                 </ul>
             </div>
@@ -65,7 +65,7 @@
                     <button class="invisibleTrigger button" type="button">Ulteriori opzioni</button>
                     <div>
                         <div>
-                            <label for="searchNazione">Citt&agrave;</label>
+                            <label for="searchCitta">Citt&agrave;</label>
                             <input type="text" placeholder="Città" id="searchCitta" name="searchCitta">
                         </div>
                         <div>
@@ -76,12 +76,12 @@
                             <span id="votoDisplay"></span>
                         </div>
                         <div>
-                            <label for="mesepart">Mese Partenza<br>
+                            <label>Mese Partenza<br>
                                 <input type="date" id="Mese_partenza" min="" max="" onkeydown="return false">
                             </label>
                         </div>
                         <div>
-                            <label for="mesearr">Mese Arrivo<br>
+                            <label>Mese Arrivo<br>
                                 <input type="date" id="Mese_arrivo">
                             </label>
                         </div>
@@ -104,13 +104,13 @@
         <section class="clearfix container">
             <div class='box1'>
                 <ul>
-                    <li><a><img src="./immagini/icone/facebook.png" alt=""></a></li>
-                    <li><a><img src="./immagini/icone/insta.png" alt=""></a></li>
-                    <li><a><img src="./immagini/icone/youtube.png" alt=""></a></li>
+                    <li><a><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
+                    <li><a><img src="./immagini/icone/insta.png" alt="icona_instagram"></a></li>
+                    <li><a><img src="./immagini/icone/youtube.png" alt="icona_youtube"></a></li>
                 </ul>
             </div>
             <div class='box1'>
-                <a href="./index.php"><img src="./immagini/logoicon.png" id="logopiccolo"></a>
+                <a href="./index.php"><img alt="logo" src="./immagini/logoicon.png" class="logopiccolo"></a>
             </div>
             <div class='box1'>
                 <button id="scroll">
@@ -119,10 +119,10 @@
             </div>
         </section>
     </footer>
-    <script type="text/javascript" src="./js/search.js"></script>
-    <script type="text/javascript" src="./js/appear.js"></script>
-    <script type="text/javascript" src="./js/logout.js"></script>
-    <script type="text/javascript" src="./js/ScrollToTop.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/appear.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/ScrollToTop.js"></script>
     <script>
         var mySlider = document.getElementById('MaxPrice');
         var mySliderValue = document.getElementById('votoDisplay');

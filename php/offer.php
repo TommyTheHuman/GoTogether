@@ -15,7 +15,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="PWEB">
-	<meta name="keywords" content="questionario, Simpson">
+	<meta name="keywords" content="proposta">
+	<title>Form di Proposta</title>
 	<link rel="shortcut icon" type="image/x-icon" href="./css/img/favicon.ico" />
 	<link rel="stylesheet" href="../css/form.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="../css/formReset.css" type="text/css" media="screen">
@@ -31,11 +32,10 @@
 
 				<label>
 					Numero peronse: *<br></label>
-				<input name="numeropersone" size="2" type="numbers" placeholder="Es: 3" pattern="[0-9]{1,2}"
-					required><br>
+				<input name="numeropersone" type="number" placeholder="Es: 3" required><br>
 				<label>
 					Prezzo: *<br></label>
-				<input name="prezzo" size="5" type="numbers" placeholder="Es: 175" pattern="[0-9]{1,5}" required><br>
+				<input name="prezzo" type="number" placeholder="Es: 175" required><br>
 
 				<label>
 					Data di partenza:<br></label>
@@ -262,7 +262,7 @@
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="../js/OfferDatecontrol.js"></script>
+	<script src="../js/OfferDatecontrol.js"></script>
 </body>
 
 </html>

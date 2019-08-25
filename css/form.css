@@ -4,7 +4,7 @@ body {
 	margin: 0;
 }
 
-.form_register, .form_login, .form_offer {
+.form_register, .form_login, .form_offer, .form_feedback{
 	display: flex;
 	border: solid 3px #909090;
 	background-color: #f5f5f5;
@@ -17,7 +17,10 @@ body {
 	vertical-align: middle;
 }
 
-.form_register form, .form_login form, .form_offer form {
+.form_register form,
+.form_login form,
+.form_offer form,
+.form_feedback form {
 	margin: 0 auto;
 	text-align: center;
 	background-color: #f5f5f5;
@@ -59,7 +62,8 @@ body {
 
 .form_register #buttons input,
 .form_login #buttons input,
-.form_offer #buttons input {
+.form_offer #buttons input,
+.form_feedback input[type=submit] {
 	cursor: pointer;
 	border: solid 2px #909090;
 	border-radius: 3px;
@@ -91,7 +95,7 @@ body {
 	max-height: 800px;
 }
 
-.form_offer > form label + input[type=text], input[type=numbers] {
+.form_offer > form label + input[type=text], input[type=number] {
 	font-size: 16px;
 	width: 100%;
 	border-bottom: 2px solid #ccc;
@@ -99,7 +103,8 @@ body {
 	color: #666;
 }
 
-.form_offer textarea {
+.form_offer textarea,
+.form_feedback textarea {
     max-width: 400px;
     height: 201px;
     width: 760px;
@@ -119,3 +124,22 @@ input[type=file]{
 	cursor: pointer;
 }
 
+.form_feedback{
+	height: 500px;
+	width: 500px;
+	border-radius: 4px;
+}
+
+.form_feedback form div:first-child p,
+.form_feedback form label {
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.form_feedback form div:first-child {
+	margin-top: 20px;
+}
+
+.form_feedback form label {
+	margin-top: 35px;
+}

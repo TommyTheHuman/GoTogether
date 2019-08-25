@@ -38,7 +38,7 @@
 		<nav class="mainNav">
 			<div class="logo">
 				<a href="./homepage.php">
-					<img src="./immagini/logoicon.png">
+					<img alt="logo" src="./immagini/logoicon.png">
 				</a>
 			</div>
 			<div class="voices">
@@ -49,14 +49,14 @@
 					<li>
 						<a href="./profilo.php">
 							<?php echo $user->nome." ".$user->cognome ?>
-							<img class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
+							<img alt="immagine del profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
 						</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
-	<script type="text/javascript" src="./js/controlloform.js"></script>
+	<script src="./js/controlloform.js"></script>
 	<?php
 		Bandiere();
 		ProposteDaAccettare();
@@ -81,16 +81,16 @@
 
 	<div class="modal" id="modal">
 		<div class="modal__content">
-			<button class="openmodal" type="button"><img class="immagine_modal" src="./immagini/icone/x.png"></button>
+			<button class="openmodal" type="button"><img alt="icona_chiusura" class="immagine_modal" src="./immagini/icone/x.png"></button>
 			<div class="modal__innerContent">
 				
 			</div>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="./js/appear.js"></script>
-	<script type="text/javascript" src="./js/tab.js"></script>
-	<script type="text/javascript" src="./js/modal.js"></script>
-	<script type="text/javascript" src="./js/partecipanti.js"></script>
+	<script src="./js/appear.js"></script>
+	<script src="./js/tab.js"></script>
+	<script src="./js/modal.js"></script>
+	<script src="./js/partecipanti.js"></script>
 </body>
 </html>

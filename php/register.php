@@ -36,18 +36,18 @@
 
 				<label>
 					Data di Nascita:<br></label>
-					<input name="birthDate" type="date" max="" onkeydown="return false"><br>
-				
-				<label class="sesso">
+				<input name="birthDate" type="date" max="" onkeydown="return false"><br>
+
+				<div class="sesso">
 					<div class="maschio">
-					<p>Maschio</p>
-					<input type="radio" name="Sesso" id="Maschio" value="Maschio">
+						<p>Maschio</p>
+						<input type="radio" name="Sesso" id="Maschio" value="Maschio">
 					</div>
 					<div class="femmina">
-					<p>Femmina</p>
-					<input type="radio" name="Sesso" id="Femmina" value="Femmina">
+						<p>Femmina</p>
+						<input type="radio" name="Sesso" id="Femmina" value="Femmina">
 					</div>
-				</label>
+				</div>
 			</div>
 			<div style="font-size:9pt; float: none; padding: 0px; margin: 0px; color: red">
 				<sup>*</sup> Campi obbligatori
@@ -59,8 +59,8 @@
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="../js/controlloform.js"></script>
-	<script type="text/javascript" src="../js/RegisterDateControl.js"></script>
+	<script src="../js/controlloform.js"></script>
+	<script src="../js/RegisterDateControl.js"></script>
 </body>
 
 </html>

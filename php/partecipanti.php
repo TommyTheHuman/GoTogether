@@ -22,7 +22,7 @@ include_once'dbconfig.php';
 			echo '
 				<li class="partecipante">
 					<a href="./userprofile.php?id='.$id.'">
-						<img class="RoundImage" src="./upload/'.$immagine.'">
+						<img alt="immagine_profilo" class="RoundImage" src="./upload/'.$immagine.'">
 						<p class="nome">'.$nome.' '.$cognome.'</p>
 					</a>
 				</li>

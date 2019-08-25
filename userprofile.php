@@ -38,7 +38,7 @@
         <nav class="mainNav">
             <div class="logo">
                 <a href="./index.php">
-                    <img src="./immagini/logoicon.png">
+                    <img alt="logo" src="./immagini/logoicon.png">
                 </a>
             </div>
             <div class="voices">
@@ -46,7 +46,7 @@
                     <li>
                         <a href="./profilo.php">
                             <?php echo $user->nome." ".$user->cognome ?>
-                            <img class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
+                            <img alt="immagine_profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
                         </a>
                     </li>
                 </ul>
@@ -56,7 +56,7 @@
     <?php
     echo "<div class='InfoProfilo'>";
 	InfoProfilo($id);
-	echo '<div class="bottoneFeed"><button type="button" onlick="./php/feedback.php?idprop='.$id.'&idutente='.$idutente.'">Lascia Un Feedback</button></div>';
+	echo '<div class="bottoneFeed"><button type="button" onclick="location.href=\'./php/feedback.php?idprop='.$id.'&idutente='.$idutente.'\'">Lascia Un Feedback</button></div>';
     echo "</div>";
     	Bandiere1();
         UltimeProposte1();

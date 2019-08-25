@@ -6,7 +6,7 @@
     function ProposteProprie(){
         global $conn;
         $id=$_SESSION["id"];
-        $proposta="select p.citta,p.datainizio,p.PersoneOra, p.IdProposta
+        $proposta="select p.citta,p.datainizio,p.PersoneOra, p.IdProposta, p.TitoloViaggio
                     from proposte p
                     where p.DataInizio >= current_date()
                     and p.IdProponente='$id';";
@@ -17,14 +17,30 @@
             $DataInizio=$riga[1];
 			$Partecipanti=$riga[2];
 			$IdProposta=$riga[3];
+			$titolo=$riga[4];
 			$giornoInizio= substr($DataInizio, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
             echo    '<div class="proposta_propria">
-						<div class="rows"><div><time class="data">'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time></div></div>
-                        <div class="rows"><p class="citta">'.$citta.'</p>
-						<p class="partecipanti" id="'.$IdProposta.'">'.$Partecipanti.'</p></div>
-						<div class="rows"><button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$IdProposta.'\'">elimina la proposta</button></div>
-                    </button>';
+						<div class="rows">
+							<h3>'.$titolo.'</h3>
+							<div class="data">
+								<div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong>
+								</div>
+							</div>
+						</div>
+						<div class="rows">
+							<div>
+                                <img alt="icona luogo" src="./immagini/icone/place.png">
+                                <p>'.$citta.'</p>
+							</div>
+							<div>
+								<img alt="icona persona" src="./immagini/icone/pers.png">
+								<p class="partecipanti" id="'.$IdProposta.'">'.$Partecipanti.'</p>
+							</div>
+						</div>
+						<div class="rows"><button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$IdProposta.'\'">Elimina</button></div>
+					</button>
+				</div>';
 		};
 		echo "</div>";
     }
@@ -64,8 +80,8 @@
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>
                                     <div class="data">
-                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
-                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -73,13 +89,13 @@
                                         <p>'.$descrizione.'</P>
                                     </div>
                                     <div class="proponente">
-                                        <div class="immagine"><a href="./userprofile.php?id='.$idporponente.'"><img src="./upload/'.$ImmagineProponente.'"></div>
+                                        <div class="immagine"><a href="./userprofile.php?id='.$Idrichiedente.'"><img alt="immagine profilo" src="./upload/'.$ImmagineProponente.'"></div>
                                         <p class="nome">'.$NomeProponente.' '.$CognomeProponente.'</p></a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div>
-                                        <img src="./immagini/icone/place.png">
+                                        <img alt="icona luogo" src="./immagini/icone/place.png">
                                         <p>'.$Citta.'</p>
                                     </div>
                                 </div>
@@ -170,8 +186,8 @@
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>
                                     <div class="data">
-                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
-                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -179,21 +195,22 @@
                                         <p>'.$descrizione.'</P>
                                     </div>
                                     <div class="proponente">
-                                        <div class="immagine"><a href="./userprofile.php?id='.$idutente.'"><img src="./upload/'.$ImmagineProponente.'"></div>
+										<div class="immagine"><a href="./userprofile.php?id='.$idutente.'"><img
+										alt="Immagine_Profilo" src="./upload/'.$ImmagineProponente.'"></div>
                                         <p class="nome">'.$NomeProponente.' '.$CognomeProponente.'</p></a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div>
-                                        <img src="./immagini/icone/place.png">
+                                        <img alt="Icona_Luogo" src="./immagini/icone/place.png">
                                         <p>'.$Citta.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/pers.png">
+                                        <img alt="Icona_persone" src="./immagini/icone/pers.png">
                                         <p>'.$PostiDisponibili.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/money.png">
+                                        <img alt="Icona_costo" src="./immagini/icone/money.png">
                                         <p>'.$Costo.'</p>
                                     </div>
                                 </div>
@@ -242,8 +259,8 @@
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>
                                     <div class="data">
-                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
-                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -253,15 +270,15 @@
                                 </div>
                                 <div class="row">
                                     <div>
-                                        <img src="./immagini/icone/place.png">
+                                        <img alt="icona_lugo" src="./immagini/icone/place.png">
                                         <p>'.$Citta.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/pers.png">
+                                        <img alt="icona_persone" src="./immagini/icone/pers.png">
                                         <p>'.$PostiDisponibili.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/money.png">
+                                        <img alt="icona_costo" src="./immagini/icone/money.png">
                                         <p>'.$Costo.'</p>
                                     </div>
                                 </div>
@@ -290,7 +307,7 @@
 		echo "<div>$paesi_visitati/194</div>";
         while($riga=mysqli_fetch_row($query)){
             $nazione = $riga[0];
-                echo'<img src="./immagini/flags/'.$nazione.'.png">';
+                echo'<img alt="bandiera '.$nazione.'" src="./immagini/flags/'.$nazione.'.png">';
         };
         echo '</div>';
     }
@@ -308,7 +325,7 @@
         echo "<div>$paesi_visitati/194</div>";
         while($riga=mysqli_fetch_row($query)){
             $nazione = $riga[0];
-                echo'<img src="./immagini/flags/'.$nazione.'.png">';
+                echo'<img alt="bandiera '.$nazione.'" src="./immagini/flags/'.$nazione.'.png">';
         }
         echo '</div>';
     }
@@ -350,8 +367,8 @@
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>
                                     <div class="data">
-                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
-                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -359,17 +376,17 @@
                                         <p>'.$descrizione.'</P>
                                     </div>
                                     <div class="proponente">
-                                        <div class="immagine"><a href="./userprofile.php?id='.$idProponente.'"><img src="./upload/'.$ImmagineProponente.'"></div>
+                                        <div class="immagine"><a href="./userprofile.php?id='.$idProponente.'"><img alt="immagine_profilo" src="./upload/'.$ImmagineProponente.'"></div>
                                         <p class="nome">'.$NomeProponente.' '.$CognomeProponente.'</p></a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div>
-                                        <img src="./immagini/icone/place.png">
+                                        <img alt="icona_città" src="./immagini/icone/place.png">
                                         <p>'.$Citta.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/money.png">
+                                        <img alt="icona_costo" src="./immagini/icone/money.png">
                                         <p>'.$Costo.'</p>
                                     </div>
                                 </div>
@@ -391,7 +408,7 @@
         $image=$riga[2];
 		echo '<div class="immagine_e_nome">
 				<div class="immagineprop">
-            <img class="RoundImage" src="./upload/'.$image.'">
+            <img alt="immagine profilo" class="RoundImage" src="./upload/'.$image.'">
 			</div>';
 		echo '<div>
             <p>'.$nome.' '.$cognome.'</p>
@@ -410,7 +427,7 @@
         while($riga=mysqli_fetch_row($risultato)) {
             $Nazione = $riga[0];
 			echo '<div class="box">
-			<img class="RoundImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
+			<img alt="meta_gettonata_'.$Nazione.'" class="RoundImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
 			</div>';
         }
     }

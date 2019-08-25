@@ -19,7 +19,7 @@
 	<header class="ImmagineBackground">
 		<div id="navbg">
 			<nav>
-				<a href="./homepage.php"><img src="./immagini/logoicon.png" id="logopiccolo"></a>
+				<a href="./homepage.php"><img src="./immagini/logoicon.png" class="logopiccolo" alt="Logo_Piccolo"></a>
 				<div class="NavBar">
 					<ul>
 						<li class="AzoSans"><a href="#desc">Chi Siamo?</a></li>
@@ -36,7 +36,7 @@
                     </li>
                     <li class="AzoSans">
                         <a href="./profilo.php">
-                            <img class="RoundImage" src="./upload/'.$_SESSION["immagine"].'">
+                            <img class="RoundImage" src="./upload/'.$_SESSION["immagine"].'" alt="Immagine_Del_Profilo">
                         </a>
                     </li>';
                 }else{
@@ -52,7 +52,7 @@
 	</header>
 	<section id="desc" class="container clearfix boxTesto">
 		<div class="box">
-			<h3 class="AzoSans">DESCRIZIONE DEL SERVIZIO</h3>
+			<h2 class="AzoSans">DESCRIZIONE DEL SERVIZIO</h2>
 		</div>
 		<div class="box">
 			<p class="Lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis, felis at dignissim
@@ -72,12 +72,12 @@
 			<?php MeteGettonate(); ?>
 		</section>
 		<div class="box">
-			<h3 class="AzoSans">DESTINAZIONI POPOLARI</h3>
+			<h2 class="AzoSans">DESTINAZIONI POPOLARI</h2>
 		</div>
 	</section>
 	<section id="scelta" class="container clearfix boxTesto">
 		<div class="box">
-			<h3 class="AzoSans">perchè sceglierci</h3>
+			<h2 class="AzoSans">perchè sceglierci</h2>
 		</div>
 		<div class="box">
 			<p class="Lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis, felis at dignissim
@@ -102,7 +102,7 @@
 				</ul>
 			</div>
 			<div class='box1'>
-				<a href="./index.php"><img src="./immagini/logoicon.png" id="logopiccolo"></a>
+				<a href="./index.php"><img src="./immagini/logoicon.png" class="logopiccolo" alt="Logo_piccolo"></a>
 			</div>
 			<div class='box1'>
 				<button id="scroll">
@@ -111,5 +111,5 @@
 			</div>
 		</section>
 	</footer>
-	<script type="text/javascript" src="./js/ScrollToTop.js"></script>
+	<script src="./js/ScrollToTop.js"></script>
 </body>

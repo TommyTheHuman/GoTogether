@@ -131,28 +131,44 @@
 }
 
 .proposta_propria{
-    background-color: aquamarine;
+    background-color: #ccc;
     width: 31%;
     padding: 5px;
 	margin: 0 1% 1% 1%;
 	box-sizing: border-box;
-	border-radius: 7px;
+	border-radius: 3px;
+	border-right: 3px solid #ff4c2b
 }
 
 .proposta_propria .rows:first-child {
-	justify-content: flex-end; 
+	justify-content: space-between; 
 	display: flex;
 	margin-right: -5px;
+	align-items: center;
 }
 
-.proposta_propria .rows:first-child div:first-child {
+.proposta_propria h3 {
+	margin-left: 23px;
+}
+
+.proposta_propria h3::before {
+	content: "";
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background-color: #22edc5;
+	margin-left: -20px;
+}
+
+.proposta_propria .rows:first-child .data {
 	display: flex;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
 	overflow: hidden;
+	border-top-left-radius: 5px;
+	height: 100%;
+	border-bottom-left-radius: 5px;
 }
 
-.proposta_propria .rows:first-child time {
+.proposta_propria .rows:first-child div {
 	width: 75px;
 	text-align: center;
 	background-color: white;
@@ -164,8 +180,38 @@
 .proposta_propria .rows:nth-child(2) {
 	display: flex;
 	justify-content: space-around;
+	margin-top: 10px;
 }
 
+.proposta_propria .rows:nth-child(2) img {
+	width: 100%;
+	height: 100%;
+	max-width: 30px;
+	max-height: 30px;
+	margin: 0 auto;
+}
+
+.proposta_propria .rows:nth-child(2) div {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.proposta_propria .rows:last-child {
+    background-color: #22edc5;
+    margin: 0 -5px -5px -5px;
+    height: 25px;
+	border-bottom-left-radius: 3px;
+}
+
+.proposta_propria .rows:last-child button {
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	font-weight: 700;
+	font-size: 14px;
+}
+	
 /* tab button*/
 
 .tab {
@@ -260,7 +306,7 @@
     border-bottom-left-radius: 5px;
 }
 
-.card .data time {
+.card .data div {
     width: 75px;
     text-align: center;
     background-color: #ff4c2b;
@@ -268,7 +314,7 @@
     border-bottom: solid #ff4c2b;
 }
 
-.card .data time:first-child {
+.card .data div:first-child {
     background-color: white;
     border-left: solid #ff4c2b;
 }

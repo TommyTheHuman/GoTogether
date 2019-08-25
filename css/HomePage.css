@@ -201,7 +201,7 @@ aside.ricerca {
     border-bottom-left-radius: 5px;
 }
 
-.card .data time {
+.card .data div {
     width: 75px;
     text-align: center;
     background-color: #ff4c2b;
@@ -209,7 +209,7 @@ aside.ricerca {
     border-bottom: solid #ff4c2b;
 }
 
-.card .data time:first-child {
+.card .data div:first-child {
     background-color: white;
     border-left: solid #ff4c2b;
 }
