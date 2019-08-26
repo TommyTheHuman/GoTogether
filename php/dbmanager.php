@@ -2,6 +2,77 @@
     include_once'dbconfig.php';
     include_once'sessioncontrol.php';
     
+	function ProposteAdmin() {
+		global $conn;
+        $proposte="select u.nome,u.cognome,u.image,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
+        from proposte p inner join utente u on u.id=p.IdProponente
+        order by p.IdProposta;";
+        $risultato = mysqli_query($conn, $proposte);    
+        while($riga=mysqli_fetch_row($risultato)) {
+            $NomeProponente=$riga[0];
+            $CognomeProponente=$riga[1];
+            $ImmagineProponente=$riga[2];
+            if($ImmagineProponente==NULL){
+                $ImmagineProponente='placeholder.png';
+            }
+            $Nazione=$riga[3];
+            $Citta=$riga[4];
+            $DataInizio=$riga[5];
+            $DataFine=$riga[6];
+            $Costo=$riga[7];
+            $PostiDisponibili=$riga[8];
+            $idutente=$riga[9];
+            $idproposta=$riga[10];
+            $descrizione=$riga[11];
+            $titolo=$riga[12];
+            $immagine=$riga[13];
+            $giornoInizio= substr($DataInizio, 8, 2);
+            $giornoFine= substr($DataFine, 8, 2);
+            $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
+            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
+            if($PostiDisponibili > 0){
+                echo    '<div class="cancella card" id='.$Nazione.'>
+                            <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
+                            <div class="right">
+                                <div class="row"> 
+                                    <h3>'.$titolo.'</h3>
+                                    <div class="data">
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="descrizione">
+                                        <p>'.$descrizione.'</P>
+                                    </div>
+                                    <div class="proponente">
+										<div class="immagine"><a href="./userprofile.php?id='.$idutente.'"><img
+										alt="Immagine_Profilo" src="./upload/'.$ImmagineProponente.'"></div>
+                                        <p class="nome">'.$NomeProponente.' '.$CognomeProponente.'</p></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <img alt="Icona_Luogo" src="./immagini/icone/place.png">
+                                        <p>'.$Citta.'</p>
+                                    </div>
+                                    <div>
+                                        <img alt="Icona_persone" src="./immagini/icone/pers.png">
+                                        <p>'.$PostiDisponibili.'</p>
+                                    </div>
+                                    <div>
+                                        <img alt="Icona_costo" src="./immagini/icone/money.png">
+                                        <p>'.$Costo.'</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$idproposta.'\'">Elimina</button>
+                                </div>
+                            </div>
+                        </div>';
+            }
+        }
+	}
 
     function ProposteProprie(){
         global $conn;

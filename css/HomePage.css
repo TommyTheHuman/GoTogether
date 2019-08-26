@@ -292,7 +292,8 @@ aside.ricerca {
     height: 45px;
 }
 
-.card .right .row:last-child input{
+.card .right .row:last-child input,
+.card .right .row:last-child button {
     font-weight: 700;
     cursor:pointer;
     height: 100%;

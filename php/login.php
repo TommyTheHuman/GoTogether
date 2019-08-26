@@ -25,7 +25,7 @@
 			<br>
 			<div id="form_right">
 				<div id="buttons">
-					<input name="bottone_sottometti" value="INVIA" type="submit">&nbsp;
+					<input name="bottone_sottometti" value="INVIA" type="submit">
 				</div>
 			</div>
 		</form>
