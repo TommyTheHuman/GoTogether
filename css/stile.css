@@ -122,4 +122,13 @@ nav li a {
     margin-left: 15px;
 }
 
+.RecImage {
+	object-fit: cover;
+	width: 90px;
+	height: 100px;
+	margin-left: 15px;
+}
+
+
+
 

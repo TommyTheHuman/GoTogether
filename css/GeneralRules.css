@@ -45,6 +45,11 @@ footer div ul li a img {
     margin: 1rem;
 }
 
+#scroll {
+	width: 50px;
+	height: 50px;
+}
+
 /* FONTS */
 @font-face {
     font-family: "Lato-Regular";

@@ -32,10 +32,10 @@
 
 				<label>
 					Numero peronse: *<br></label>
-				<input name="numeropersone" type="number" placeholder="Es: 3" required><br>
+				<input name="numeropersone" type="number" placeholder="Es: 3"><br>
 				<label>
 					Prezzo: *<br></label>
-				<input name="prezzo" type="number" placeholder="Es: 175" required><br>
+				<input name="prezzo" type="number" placeholder="Es: 175"><br>
 
 				<label>
 					Data di partenza:<br></label>
@@ -46,6 +46,7 @@
 				<label for="country">Country<br></label>
 
 				<select id="country" name="country" class="form-control">
+					<option value="Scegli_la_Nazione">Scegli la Nazione</option>
 					<option value="Afghanistan">Afghanistan</option>
 					<option value="Albania">Albania</option>
 					<option value="Algeria">Algeria</option>
@@ -244,8 +245,7 @@
 				</select><br>
 				<label>
 					titolo: *<br></label>
-				<input name="titolo" size="15" type="text" placeholder="Es: Roma e i monumenti" pattern="[a-zA-Z\s]+"
-					required><br>
+				<input name="titolo" size="15" type="text" placeholder="Es: Roma e i monumenti" pattern="[a-zA-Z\s]+"><br>
 				<label>
 					Descrizione del viaggio<br></label>
 				<textarea name="descrizione" rows="7" cols="30" id="descrizione"></textarea><br>
@@ -257,12 +257,13 @@
 			</div>
 			<div id="form_right">
 				<div id="buttons">
-					<input name="invio" value="INVIA" type="submit" onclick="controlloData()">
+					<input name="invio" value="INVIA" type="button" onclick="controlloForm()">
 				</div>
 			</div>
 		</form>
 	</div>
 	<script src="../js/OfferDatecontrol.js"></script>
+	<script src="../js/OfferFormControl.js"></script>
 </body>
 
 </html>

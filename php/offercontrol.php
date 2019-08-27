@@ -11,9 +11,7 @@
     $Nazione = $_POST['country'];
     $Descrizione = $_POST['descrizione'];
     $Titolo = $_POST['titolo'];
-
-    if(isset($_POST['invio'])){
-        $file = $_FILES['file'];
+    $file = $_FILES['file'];
 
             define('KB', 1024);
             define('MB', 1048576);
@@ -48,7 +46,6 @@
             }else{
             echo"errore3";
         }
-    }
     
     $sql="insert into proposte (IdProponente, Nazione, Citta, DataInizio, DataFine, Prezzo, NumPersone, titoloViaggio, image, descrizione)values('$id','$Nazione','$citta','$DataPartenza','$DataRitorno','$Prezzo','$NumeroPersone', '$Titolo', '$fileNameNew', '$Descrizione');";
     mysqli_query($conn,$sql);

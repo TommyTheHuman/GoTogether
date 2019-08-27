@@ -19,19 +19,3 @@ function min_return_date() {
 	var dataok = yyyy + '-' + mm + '-' + dd;
 	document.offer.ritorno.setAttribute('min', dataok);
 }
-
-function controlloData() {
-	var partenza = document.offer.partenza.value;
-	var ritorno = document.offer.ritorno.value;
-	var partenza_data = new Date(partenza);
-	var ritorno_data = new Date(ritorno);
-
-	if (partenza_data > ritorno_data) {
-		alert('La data di ritono deve essere successiva a quella di partenza');
-		document.offer.ritorno.focus();
-		return false;
-	} else {
-		document.offer.action = './offercontrol.php';
-		document.offer.submit();
-	}
-}

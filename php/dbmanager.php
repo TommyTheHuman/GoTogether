@@ -498,7 +498,7 @@
         while($riga=mysqli_fetch_row($risultato)) {
             $Nazione = $riga[0];
 			echo '<div class="box">
-			<img alt="meta_gettonata_'.$Nazione.'" class="RoundImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
+			<img alt="meta_gettonata_'.$Nazione.'" class="RecImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
 			</div>';
         }
     }

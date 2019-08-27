@@ -20,7 +20,8 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>NOME DEL SITO</title>
+	<title>Profilo Personale</title>
+	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen"> <!-- css -->
 	<?php include_once './include/head.html' ?>

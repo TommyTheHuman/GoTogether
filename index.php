@@ -104,10 +104,8 @@
 			<div class='box1'>
 				<a href="./index.php"><img src="./immagini/logoicon.png" class="logopiccolo" alt="Logo_piccolo"></a>
 			</div>
-			<div class='box1'>
-				<button id="scroll">
-					Back To Top
-				</button>
+			<div class='box1'>			
+				<img alt="scroll_to_top" src="./immagini/icone/top.png" id="scroll">
 			</div>
 		</section>
 	</footer>

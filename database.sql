@@ -24,7 +24,7 @@ create table proposte(
     Prezzo int not null,
     NumPersone int not null,
     PersoneOra int default 0,
-    titoloViaggio varchar(20) not null,
+    titoloViaggio varchar(50) not null,
     image varchar(100) not null,
     descrizione text not null,
     primary key(IdProposta),
