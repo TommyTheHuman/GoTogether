@@ -44,9 +44,9 @@ function login($email, $password){
 
 function authenticate ($email, $password){
         global $conn;
-		$query = "SELECT * FROM utente WHERE email = '".$email."' AND password = '".$password."' ;";
+		$query = "SELECT * FROM utente WHERE BINARY email = '".$email."' AND password = '".$password."' ;";
         $ris = mysqli_query($conn, $query);
-        $numrighe= mysqli_num_rows($ris);
+		$numrighe= mysqli_num_rows($ris);
 		if ($numrighe>0){
             $userRow = mysqli_fetch_row($ris);
             $_SESSION['nome']=$userRow[1];

@@ -6,7 +6,7 @@ create table utente (
     nome varchar(50) not  null,
     cognome varchar(50) not null,
     email varchar(100) not null,
-    password varchar(100) not null,
+    password varbinary(100) not null,
     datanascita date default null,
     image varchar(100) default 'placeholder.png',
     gender varchar(100) not null,
