@@ -2,14 +2,12 @@
     include_once"./dbconfig.php";
     include"./dbmanager.php";
     $json = json_decode(file_get_contents('php://input'));
-    echo $json->searchNazione . ' ' . $json->maxPrice;
     $nazione = isset($json->searchNazione) ? $json->searchNazione : 'Tutte';
     $nazioneok = mysqli_real_escape_string($conn, $nazione);
     $prezzo = mysqli_real_escape_string($conn,$json->maxPrice);
     $citta = mysqli_real_escape_string($conn,$json->searchCitta);
     $partenza = mysqli_real_escape_string($conn,$json->searchmesepart);
     $arrivo = mysqli_real_escape_string($conn,$json->searchmesearr);
-    echo $partenza;
 
 $variabili = array();
 $query = "select u.nome,u.cognome,u.image,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
@@ -26,7 +24,6 @@ $sql = $query;
     }
     $sql .= " order by p.IdProposta";
     $risultato = mysqli_query($conn, $sql); 
-    echo $sql;
         while($riga=mysqli_fetch_row($risultato)){
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
