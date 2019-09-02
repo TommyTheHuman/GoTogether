@@ -92,12 +92,12 @@
             </div>
         </aside>
         <div>
-           <section id="print"></section>
             <section  class="proposte">
                 <?php
                 UltimeProposte();
             ?>
-            </section>
+			</section>
+			<section class="print" id="print"></section>
         </div>
     </main>
     <footer id="contatti">

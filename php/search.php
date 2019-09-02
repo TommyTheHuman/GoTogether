@@ -46,14 +46,14 @@ $sql = $query;
             $giornoFine= substr($DataFine, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
             $meseFine = convertMonthToString(substr($DataFine, 5, 2));
-                echo    '<div class="ricerca card" id='.$Nazione.'>
+                echo    '<div class="ricerca card">
                             <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>
                                     <div class="data">
-                                        <time>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></time> 
-                                        <time>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></time>
+                                        <div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong></div> 
+                                        <div>'.$giornoFine.'<br/><strong>'.$meseFine.'</strong></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -61,21 +61,21 @@ $sql = $query;
                                         <p>'.$descrizione.'</P>
                                     </div>
                                     <div class="proponente">
-                                        <div class="immagine"><a href="./userprofile.php?id='.$idutente.'"><img src="./upload/'.$ImmagineProponente.'"></div>
+                                        <div class="immagine"><a href="./userprofile.php?id='.$idutente.'"><img alt="Immagine_Profilo" src="./upload/'.$ImmagineProponente.'"></div>
                                         <p class="nome">'.$NomeProponente.' '.$CognomeProponente.'</p></a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div>
-                                        <img src="./immagini/icone/place.png">
+										<img alt="Icona_Luogo" src="./immagini/icone/place.png">
                                         <p>'.$Citta.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/pers.png">
+                                        <img alt="Icona_persone" src="./immagini/icone/pers.png">
                                         <p>'.$PostiDisponibili.'</p>
                                     </div>
                                     <div>
-                                        <img src="./immagini/icone/money.png">
+                                        <img alt="Icona_costo" src="./immagini/icone/money.png">
                                         <p>'.$Costo.'</p>
                                     </div>
                                 </div>
