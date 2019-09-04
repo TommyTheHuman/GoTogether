@@ -151,6 +151,14 @@ aside.ricerca {
     margin-top: 40px;
 }
 
+.ricerca ~ .ricerca {
+    margin-top: 40px;
+}
+
+.print {
+	padding: 20px 40px;
+}
+
 .card {
     display: flex;
     background-color: #f5f5f5;
