@@ -250,3 +250,49 @@
 	padding: 15px;
 	flex-direction: row-reverse;
 }
+
+
+/* FeedBack */
+
+.recensioni {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1090px;
+	margin: 0 auto;
+}
+.recensione {
+	background-color: #f5f5f5;
+	width: 100%;
+	max-width: 300px;
+	padding: 10px;
+	margin: 10px 20px;
+	border-radius: 5px;
+}
+
+.RoundImage {
+	margin-left: 0px;
+}
+
+.recensore {
+	text-align: center;
+}
+
+.recensione .rows:first-child .recensore a{
+	text-decoration: none;
+	color: black;
+}
+
+.recensione .rows:first-child {
+	display: flex;
+	justify-content: space-between;
+}
+
+.voto {
+	display: flex;
+}
+
+.voto .stella {
+	height: 20px;
+	width: 20px;
+}

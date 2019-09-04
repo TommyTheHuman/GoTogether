@@ -60,7 +60,8 @@
 	echo '<div class="bottoneFeed"><button type="button" onclick="location.href=\'./php/feedback.php?idprop='.$id.'&idutente='.$idutente.'\'">Lascia Un Feedback</button></div>';
     echo "</div>";
     	Bandiere1();
-        UltimeProposte1();
+		UltimeProposte1();
+		recensioni();
 	?>
 </body>
 

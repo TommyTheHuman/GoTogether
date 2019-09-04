@@ -501,5 +501,76 @@
 			<img alt="meta_gettonata_'.$Nazione.'" class="RecImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
 			</div>';
         }
-    }
+	}
+	
+	function recensioni() {
+		global $conn;
+        global $id;
+        $sql= "SELECT f.voto, f.commento, u.nome, u.cognome, u.image, f.idrecensore
+				FROM feedback f inner join utente u on u.id = f.idrecensore
+				WHERE f.idrecensito = ".$id.";";
+        $query = mysqli_query($conn, $sql);
+        echo '<div class="recensioni">';
+        while($riga=mysqli_fetch_row($query)){
+			$voto = $riga[0];
+			$commento = $riga[1];
+			$nome = $riga[2];
+			$cognome = $riga[3];
+			$immagine = $riga[4];
+			$idRecensore = $riga[5];
+			echo    '<div class="recensione">
+						<div class="rows">
+                            <div class="commento">
+                                <p>'.$commento.'</P>
+                            </div>
+                            <div class="recensore">
+								<div class="immagine"><a href="./userprofile.php?id='.$idRecensore.'"><img class="RoundImage"
+										alt="Immagine_Profilo" src="./upload/'.$immagine.'"></div>
+                                <p class="nome">'.$nome.' '.$cognome.'</p></a>
+                            </div>
+                        </div>
+						<div class="rows">
+							<div class="voto">';
+								stelle($voto);
+			echo			"</div>
+						</div>
+					</div>";
+        }
+        echo '</div>';
+	}
+
+	function stelle($voto) {
+			switch($voto){
+                case "1":
+                	echo "<img class='stella' alt='stella' src='./immagini/icone/star.png'>";
+					return;
+					break;
+                case "2":
+				   echo "<img class='stella' alt='stella' src='./immagini/icone/star.png'>
+				   		<img class='stella' alt='stella' src='./immagini/icone/star.png'>";
+					return;
+					break;
+                case "3":
+				   echo "<img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>";
+					return;
+					break;
+                case "4":
+				   echo "<img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>";
+					return;
+					break;
+                case "5":
+				   echo "<img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>
+						   <img class='stella' alt='stella' src='./immagini/icone/star.png'>";
+					return;
+					break;
+            };
+	}
 ?>

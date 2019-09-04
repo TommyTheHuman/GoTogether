@@ -19,11 +19,12 @@ order by idproposta";
 $control = mysqli_query($conn, $controllo);
 if(mysqli_num_rows($control) > 0){
     $sql="insert into feedback (IdRecensore, IdRecensito, Voto, Commento)values('$idrecensore','$idrecensito','$voto','$commento');";
-    mysqli_query($conn,$sql);
+	mysqli_query($conn,$sql);
+	header("Location: ../userprofile.php?id=$idrecensito");
 }else{
     echo '<script>alert("Non puoi lasciare una recensione se non hai interagito con la persona");
     window.location.replace("../userprofile.php?id='.$idrecensito.'");</script>';
-    //header("Location: ../userprofile.php?id=$idrecensito");
+    header("Location: ../userprofile.php?id=$idrecensito");
 }
 
 ?>
