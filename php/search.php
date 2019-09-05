@@ -26,8 +26,10 @@ $sql = $query;
     }
 	$sql .= " order by p.IdProposta";
 	$sql .= " LIMIT " . $minimo .",". $massimo;
+	$conto = 0;
     $risultato = mysqli_query($conn, $sql); 
         while($riga=mysqli_fetch_row($risultato)){
+			$conto++;
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
             $ImmagineProponente=$riga[2];
@@ -48,9 +50,12 @@ $sql = $query;
             $giornoInizio= substr($DataInizio, 8, 2);
             $giornoFine= substr($DataFine, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
-            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
-                echo    '<div class="ricerca card">
-                            <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
+			$meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			echo    '<div class="ricerca card';
+				if ($conto == 5){
+					echo ' card--loader';
+				};
+				echo	'"><div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
                                     <h3>'.$titolo.'</h3>

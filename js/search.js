@@ -4,16 +4,45 @@ var i = 0;
 var subNazione = document.getElementById('subNazione');
 var DeleteSearch = document.getElementById("DeleteSearch");
 var minimo = 0;
-var massimo = 3;
+var massimo = 10;
 var RicercaPrecedente = {
-            'searchNazione': "",
-            'maxPrice': "",
-            'searchCitta': "",
-            'searchmesepart': "",
-			'searchmesearr': "",
-			'inferiorlimit': minimo,
-			'superiorlimit': massimo 
+	'searchNazione': "",
+	'maxPrice': "",
+	'searchCitta': "",
+	'searchmesepart': "",
+	'searchmesearr': "",
+	'inferiorlimit': minimo,
+	'superiorlimit': massimo 
 };
+var cardLoader = '';
+
+var isScrolling;
+
+function setEvent(){
+	window.addEventListener('scroll', function ( event ) {
+		// Clear our timeout throughout the scroll
+		window.clearTimeout( isScrolling );
+		// Set a timeout to run after scrolling ends
+		isScrolling = setTimeout(function() {
+			// Run the callback
+			if (cardLoader) {
+				checkCardPosition();
+			}
+		}, 66);
+	}, false);
+}
+
+
+function checkCardPosition() {
+	var cardHeight = cardLoader.offsetTop;
+	var offset = document.documentElement.scrollTop + window.innerHeight;
+	if (cardHeight <= offset){
+		cardLoader.removeAttribute("class");
+		cardLoader.setAttribute('class', 'ricerca card');
+		cerca();
+		cardLoader = document.getElementsByClassName('card--loader')[0];
+	}
+} 
 
 function showButton() {
     document.getElementById("DeleteSearch").classList.add('DeleteSearch--isVisible');
@@ -48,62 +77,69 @@ DeleteSearch.addEventListener("click", clear)
 subNazione.addEventListener("click", showButton);
 subNazione.addEventListener("click", function (event) {
     event.preventDefault();
-    cerca();
+	cerca();
 });
-subNazione.addEventListener("click", aggiungi);
+subNazione.addEventListener("click", setEvent);
 
 function aggiungi(){
 	window.addEventListener('scroll', scrolla);
 }
 
-function scrolla(event){
-	// Get the height of the entire document
-    var height = document.documentElement.offsetHeight,
-    // Get the current offset - how far "scrolled down"
-    offset = document.documentElement.scrollTop + window.innerHeight;
+function populateData(
+	searchNazioneValueCreator,
+	searchMaxPriceValueCreator,
+	searchCittaValueCreator,
+	searchMesePartenzaCreator,
+	searchMesearrivoCreator,
+	minimoCreator,
+	massimoCreator
+) {
+	var dataCreator = {
+		'searchNazione': searchNazioneValueCreator,
+		'maxPrice': searchMaxPriceValueCreator,
+		'searchCitta': searchCittaValueCreator,
+		'searchmesepart': searchMesePartenzaCreator,
+		'searchmesearr': searchMesearrivoCreator,
+		'inferiorlimit': minimoCreator,
+		'superiorlimit': massimoCreator
+	};
 
-    // Check if user has hit the end of page
-    // console.log('Height: ' + height);
-    // console.log('Offset: ' + offset);
-    if (offset === height) { 
-      cerca();
-    }
+	return dataCreator;
+
 }
-
 
 function cerca() {
     console.log('Function "cerca" working...');
-    cancella();
-    var nazione = document.getElementById('searchNazione').value;
-		
-        var searchNazioneValue = document.getElementById('searchNazione').value;
-        var searchMaxPriceValue = document.getElementById('MaxPrice').value;
-        var searchCittaValue = document.getElementById('searchCitta').value;
-        var searchMesePartenza = document.getElementById('Mese_partenza').value;
-        var searchMesearrivo = document.getElementById('Mese_arrivo').value;
-        var data = {
-            'searchNazione': searchNazioneValue,
-            'maxPrice': searchMaxPriceValue,
-            'searchCitta': searchCittaValue,
-            'searchmesepart': searchMesePartenza,
-			'searchmesearr': searchMesearrivo,
-			'inferiorlimit': minimo,
-			'superiorlimit': massimo 
-		};
+	cancella();
+	
+	var searchNazioneValue = document.getElementById('searchNazione').value;
+	var searchMaxPriceValue = document.getElementById('MaxPrice').value;
+	var searchCittaValue = document.getElementById('searchCitta').value;
+	var searchMesePartenza = document.getElementById('Mese_partenza').value;
+	var searchMesearriv = document.getElementById('Mese_arrivo').value;
+    		
+	var data = populateData(
+		searchNazioneValue,
+		searchMaxPriceValue,
+		searchCittaValue,
+		searchMesePartenza,
+		searchMesearriv,
+		minimo,
+		massimo
+	);
 
 		if ((data.searchNazione != RicercaPrecedente.searchNazione) || (data.maxPrice != RicercaPrecedente.maxPrice) || (data.searchCitta != RicercaPrecedente.searchCitta) || (data.searchmesepart != RicercaPrecedente.searchmesepart) || (data.searchMesearrivo != RicercaPrecedente.searchMesearrivo)){
 			clearBox();
-			console.log("ok");
 			minimo = 0;
-			var data = {
-				'searchNazione': searchNazioneValue,
-				'maxPrice': searchMaxPriceValue,
-				'searchCitta': searchCittaValue,
-				'searchmesepart': searchMesePartenza,
-				'searchmesearr': searchMesearrivo,
-				'inferiorlimit': minimo,
-				'superiorlimit': massimo 
-			};
+			var data = populateData(
+				searchNazioneValue,
+				searchMaxPriceValue,
+				searchCittaValue,
+				searchMesePartenza,
+				searchMesearriv,
+				minimo,
+				massimo
+			);
 		}
 		RicercaPrecedente = data;
 		var xhr = new XMLHttpRequest();
@@ -118,7 +154,7 @@ function cerca() {
 
             // Process our return data
             if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log('Response 200: ' + xhr.responseText);
+                //console.log('Response 200: ' + xhr.responseText);
 				var requestResponse = xhr.responseText;
 				if (requestResponse == '') {
 					window.removeEventListener('scroll', scrolla);
@@ -126,6 +162,9 @@ function cerca() {
                 document.getElementById('print').innerHTML = document.getElementById('print').innerHTML + requestResponse;
 				cancella();
 				minimo += massimo;
+				cardLoader = document.getElementsByClassName(
+						'card--loader'
+					)[0];
             } else {
                 // This will run when it's not
                 console.log('Service temporarly unavaible');

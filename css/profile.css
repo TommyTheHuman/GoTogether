@@ -90,6 +90,7 @@
 	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
+	margin-top: 20px;
 	padding: 15px;
 	flex-direction: row-reverse;
 }
@@ -124,24 +125,26 @@
 .proposte_proprie {
     display: flex;
     flex-wrap: wrap;
-	justify-content: space-between;
-	width: 100%;
-	max-width: 1000px;
-	margin: 0 auto;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .proposta_propria{
-    background-color: #ccc;
+    background-color: #f7f7f7;
     width: 31%;
     padding: 5px;
-	margin: 0 1% 1% 1%;
-	box-sizing: border-box;
-	border-radius: 3px;
-	border-right: 3px solid #ff4c2b
+    margin: 0 1% 1% 1%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border-right: 3px solid #ff4c2b;
+    display: flex;
+    flex-direction: column;
 }
 
 .proposta_propria .rows:first-child {
-	justify-content: space-between; 
+	justify-content: space-between;
 	display: flex;
 	margin-right: -5px;
 	align-items: center;
@@ -161,11 +164,10 @@
 }
 
 .proposta_propria .rows:first-child .data {
-	display: flex;
 	overflow: hidden;
 	border-top-left-radius: 5px;
-	height: 100%;
 	border-bottom-left-radius: 5px;
+	padding: 5px;
 }
 
 .proposta_propria .rows:first-child div {
@@ -201,15 +203,16 @@
     background-color: #22edc5;
     margin: 0 -5px -5px -5px;
     height: 25px;
-	border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-top: auto;
 }
 
 .proposta_propria .rows:last-child button {
 	cursor: pointer;
-	height: 100%;
-	width: 100%;
-	font-weight: 700;
-	font-size: 14px;
+    height: 100%;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14px;
 }
 	
 /* tab button*/

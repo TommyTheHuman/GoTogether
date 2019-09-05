@@ -95,8 +95,7 @@
 						<div class="rows">
 							<h3>'.$titolo.'</h3>
 							<div class="data">
-								<div>'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong>
-								</div>
+								'.$giornoInizio.'<br/><strong>'.$meseInizio.'</strong>
 							</div>
 						</div>
 						<div class="rows">
