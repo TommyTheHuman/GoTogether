@@ -23,6 +23,7 @@ function login($email, $password){
 			$_SESSION['cognome'] = "Admin";
 			$_SESSION['immagine'] = "placeholder.png";
 			$_SESSION['id'] = "Admin";
+			$_SESSION['client'] = "Admin";
 			return true;
 		};
 	

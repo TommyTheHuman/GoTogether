@@ -39,7 +39,7 @@
 			<div>
 				<label>
 					Giudizio sull'esperienza<br /></label>
-				<textarea name="commento" rows="7" cols="30" onKeyUp="update(document.mio_form)"
+				<textarea name="commento" rows="7" cols="30"
 					id="feedback"></textarea><br>
 				<br>
 				<input name="bottone_sottometti" value="INVIA" type="submit">

@@ -4,7 +4,7 @@
     include_once'./php/dbconfig.php';
     include_once './php/dbmanager.php';
 
-    if (!isLogged()){
+    if (!isset($_SESSION['client'])){
 		    header('Location: ./index.php');
 		    exit;
     }
@@ -42,10 +42,8 @@
                 <ul>
                     <li class="AzoSans oggetto"><a href="./php/offer.php">Fai la tua proposta</a></li>
                     <li>
-                        <a href="./profilo.php">
                             <?php echo $user->nome." ".$user->cognome ?>
                             <img alt="immagine_profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
-                        </a>
                     </li>
                     <li>
                         <img alt="icona_logout" data-function="logout" class="logouticon" src="./immagini/icone/logout.png">
@@ -77,9 +75,7 @@
                 <a href="./index.php"><img alt="logo" src="./immagini/logoicon.png" class="logopiccolo"></a>
             </div>
             <div class='box1'>
-                <button id="scroll">
-                    Back To Top
-                </button>
+                <img alt="scroll_to_top" src="./immagini/icone/top.png" id="scroll">
             </div>
         </section>
     </footer>

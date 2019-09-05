@@ -7,7 +7,9 @@
     $prezzo = mysqli_real_escape_string($conn,$json->maxPrice);
     $citta = mysqli_real_escape_string($conn,$json->searchCitta);
     $partenza = mysqli_real_escape_string($conn,$json->searchmesepart);
-    $arrivo = mysqli_real_escape_string($conn,$json->searchmesearr);
+	$arrivo = mysqli_real_escape_string($conn,$json->searchmesearr);
+	$minimo = $json->inferiorlimit;
+	$massimo = $json->superiorlimit;
 
 $variabili = array();
 $query = "select u.nome,u.cognome,u.image,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
@@ -22,7 +24,8 @@ $sql = $query;
     if (count($variabili) > 0) {
       $sql .= " WHERE " . implode(' AND ', $variabili);
     }
-    $sql .= " order by p.IdProposta";
+	$sql .= " order by p.IdProposta";
+	$sql .= " LIMIT " . $minimo .",". $massimo;
     $risultato = mysqli_query($conn, $sql); 
         while($riga=mysqli_fetch_row($risultato)){
             $NomeProponente=$riga[0];
