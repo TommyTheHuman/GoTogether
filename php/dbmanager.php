@@ -226,7 +226,8 @@
         global $conn;
         $proposte="select u.nome,u.cognome,u.image,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
         from proposte p inner join utente u on u.id=p.IdProponente
-        order by p.IdProposta;";
+		order by p.IdProposta desc
+		limit 15;";
         $risultato = mysqli_query($conn, $proposte);    
         while($riga=mysqli_fetch_row($risultato)) {
             $NomeProponente=$riga[0];
