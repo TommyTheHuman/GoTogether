@@ -31,8 +31,9 @@
             if(in_array($fileActualExt, $allowed)){
                 if($fileError === 0){
                     if($fileSize < 6*MB){
-                        $uploads_dir = "..\immagini\background_proposte";
-                        $idUnivoco = uniqid("$Nazione", false);
+						$uploads_dir = "..\immagini\background_proposte";
+						$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
+                        $idUnivoco = uniqid("$NazioneOk", false);
                         var_dump($idUnivoco);
                         $fileNameNew = "background_".$idUnivoco.".".$fileActualExt;
                         move_uploaded_file($fileTmpName, "$uploads_dir/$fileNameNew");
@@ -47,7 +48,8 @@
             echo"errore3";
         }
     
-    $sql="insert into proposte (IdProponente, Nazione, Citta, DataInizio, DataFine, Prezzo, NumPersone, titoloViaggio, image, descrizione)values('$id','$Nazione','$citta','$DataPartenza','$DataRitorno','$Prezzo','$NumeroPersone', '$Titolo', '$fileNameNew', '$Descrizione');";
+	$sql="insert into proposte (IdProponente, Nazione, Citta, DataInizio, DataFine, Prezzo, NumPersone, titoloViaggio, image, descrizione)values('$id','$Nazione','$citta','$DataPartenza','$DataRitorno','$Prezzo','$NumeroPersone', '$Titolo', '$fileNameNew', '$Descrizione');";
+	echo $sql;
     mysqli_query($conn,$sql);
     header("location: ../homepage.php?");
 ?>

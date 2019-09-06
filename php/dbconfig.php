@@ -2,7 +2,7 @@
     $dbhostname="localhost";
     $dbusername="root";
     $dbpassword="";
-    $dbname="NomeSito";
+    $dbname="GoTogether";
 
 $conn= mysqli_connect($dbhostname,$dbusername,$dbpassword,$dbname);
 ?>

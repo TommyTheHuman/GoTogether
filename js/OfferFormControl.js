@@ -46,7 +46,6 @@ function controlloForm() {
 		return false;
 	} else if (immagine == '' || immagine == 'undefined') {
 		alert('Il campo immagine è obbligatorio.');
-		document.offer.immagine.focus();
 		return false;
 	} else if (partenza_data > ritorno_data) {
 		alert('La data di ritono deve essere successiva a quella di partenza');

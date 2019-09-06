@@ -1,5 +1,5 @@
-create database if not exists NomeSito;
-use NomeSito;
+create database if not exists GoTogether;
+use GoTogether;
 drop table if exists utente;
 create table utente (
     id int not null auto_increment,
@@ -24,8 +24,8 @@ create table proposte(
     Prezzo int not null,
     NumPersone int not null,
     PersoneOra int default 0,
-    titoloViaggio varchar(50) not null,
-    image varchar(100) not null,
+    titoloViaggio varchar(100) not null,
+    image varchar(500) not null,
     descrizione text not null,
     primary key(IdProposta),
     FOREIGN KEY (IdProponente) REFERENCES utente(id)

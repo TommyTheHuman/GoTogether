@@ -28,10 +28,11 @@
             $immagine=$riga[13];
             $giornoInizio= substr($DataInizio, 8, 2);
             $giornoFine= substr($DataFine, 8, 2);
-            $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
+			$meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
+			$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
             $meseFine = convertMonthToString(substr($DataFine, 5, 2));
             if($PostiDisponibili > 0){
-                echo    '<div class="cancella card" id='.$Nazione.'>
+                echo    '<div class="cancella card" id='.$NazioneOk.'>
                             <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
@@ -248,9 +249,10 @@
             $giornoInizio= substr($DataInizio, 8, 2);
             $giornoFine= substr($DataFine, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
-            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			$meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
             if($PostiDisponibili > 0){
-                echo    '<div class="cancella card" id='.$Nazione.'>
+                echo    '<div class="cancella card" id='.$NazioneOk.'>
                             <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
@@ -321,9 +323,10 @@
             $giornoInizio= substr($DataInizio, 8, 2);
             $giornoFine= substr($DataFine, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
-            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			$meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
             if($PostiDisponibili > 0){
-                echo    '<div class="card" id='.$Nazione.'>
+                echo    '<div class="card" id='.$NazioneOk.'>
                             <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
@@ -430,8 +433,9 @@
 			$giornoInizio= substr($DataInizio, 8, 2);
             $giornoFine= substr($DataFine, 8, 2);
             $meseInizio = convertMonthToString(substr($DataInizio, 5, 2));
-            $meseFine = convertMonthToString(substr($DataFine, 5, 2));
-            echo    '<div class="cancella card" id='.$Nazione.'>
+			$meseFine = convertMonthToString(substr($DataFine, 5, 2));
+			$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
+            echo    '<div class="cancella card" id='.$NazioneOk.'>
                             <div class="left" style="background-image:url(./immagini/background_proposte/'.$immagine.')"></div>
                             <div class="right">
                                 <div class="row"> 
@@ -495,9 +499,10 @@
 							limit 3";
         $risultato = mysqli_query($conn, $sql);    
         while($riga=mysqli_fetch_row($risultato)) {
-            $Nazione = $riga[0];
+			$Nazione = $riga[0];
+			$NazioneOk = preg_replace('/\s+/', '_', $Nazione);
 			echo '<div class="box">
-			<img alt="meta_gettonata_'.$Nazione.'" class="RecImage" src="./immagini/proposte_gettonate/'.$Nazione.'.jpg">
+			<img alt="meta_gettonata_'.$NazioneOk.'" class="RecImage" src="./immagini/proposte_gettonate/'.$NazioneOk.'.jpg">
 			</div>';
         }
 	}
