@@ -15,7 +15,7 @@
 		<form action="./logincontrol.php" name="mio_form" method="post">
 			<div>
 				<label>
-					E-mail: *<br></label></label>
+					E-mail: *<br></label>
 				<input name="email" size="30" type="email" placeholder="Es: mario.rossi@gmail.com"
 					value="tommyc98@yahoo.it"><br>
 

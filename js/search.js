@@ -156,9 +156,6 @@ function cerca() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 //console.log('Response 200: ' + xhr.responseText);
 				var requestResponse = xhr.responseText;
-				if (requestResponse == '') {
-					window.removeEventListener('scroll', scrolla);
-				}
                 document.getElementById('print').innerHTML = document.getElementById('print').innerHTML + requestResponse;
 				cancella();
 				minimo += massimo;
