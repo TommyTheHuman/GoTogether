@@ -19,7 +19,7 @@ footer {
     vertical-align: middle;
 }
 
-footer section div a {
+footer section div a, footer section div img {
     color: black;
     text-decoration: none;
 }
@@ -36,7 +36,8 @@ footer div ul li {
 }
 
 footer div ul li a img {
-    width: 50px;
+	width: 70px;
+	height: 70px;
 }
 
 .logopiccolo {

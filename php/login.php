@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Form Di LogIn</title>
-	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
+	<link rel="icon" href="../immagini/faveicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../css/formreset.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="../css/form.css" type="text/css" media="screen">
@@ -26,7 +26,7 @@
 			<br>
 			<div id="form_right">
 				<div id="buttons">
-					<input name="bottone_sottometti" value="INVIA" type="submit">
+					<input name="bottone_sottometti" value="LOGIN" type="submit">
 				</div>
 			</div>
 		</form>

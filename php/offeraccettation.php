@@ -12,6 +12,6 @@
     $idrichiedente = mysqli_real_escape_string($conn,$_SESSION['id']);
     $sql="insert into propostedaaccettare (IdProposta, IdRichiedente, IdProponente)values('$idproposta','$idrichiedente','$idproponente');";
     mysqli_query($conn,$sql);
-    header(("location: ../homepage.php?"));
+    header(("location: ../homepage.php?Richiesta_Di_Partecipazione_Avvenuta_Con_Successo"));
 
 ?>

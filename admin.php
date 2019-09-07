@@ -34,16 +34,13 @@
     <header class="ImmagineBackground">
         <nav class="mainNav">
             <div class="logo">
-                <a href="./homepage.php">
-                    <img alt="logo" src="./immagini/logoicon.png">
-                </a>
+            	<img alt="logo" src="./immagini/logoicon.png">
             </div>
             <div class="voices">
                 <ul>
-                    <li class="AzoSans oggetto"><a href="./php/offer.php">Fai la tua proposta</a></li>
                     <li>
-                            <?php echo $user->nome." ".$user->cognome ?>
-                            <img alt="immagine_profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
+                        <p><?php echo $user->nome." ".$user->cognome ?></p>
+                        <img alt="immagine_profilo" class='RoundImage' <?php echo 'src='.$user->profileImage ?>>
                     </li>
                     <li>
                         <img alt="icona_logout" data-function="logout" class="logouticon" src="./immagini/icone/logout.png">
@@ -66,13 +63,13 @@
         <section class="clearfix container">
             <div class='box1'>
                 <ul>
-                    <li><a><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
-                    <li><a><img src="./immagini/icone/insta.png" alt="icona_instagram"></a></li>
-                    <li><a><img src="./immagini/icone/youtube.png" alt="icona_youtube"></a></li>
+                    <li><a href="https://www.facebook.com"><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="./immagini/icone/insta.png" alt="icona_instagram"></a></li>
+                    <li><a href="https://www.youtube.com/"><img src="./immagini/icone/youtube.png" alt="icona_youtube"></a></li>
                 </ul>
             </div>
             <div class='box1'>
-                <a href="./index.php"><img alt="logo" src="./immagini/logoicon.png" class="logopiccolo"></a>
+                <img alt="logo" src="./immagini/logoicon.png" class="logopiccolo">
             </div>
             <div class='box1'>
                 <img alt="scroll_to_top" src="./immagini/icone/top.png" id="scroll">

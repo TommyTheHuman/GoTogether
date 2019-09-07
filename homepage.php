@@ -104,9 +104,9 @@
         <section class="clearfix container">
             <div class='box1'>
                 <ul>
-                    <li><a><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
-                    <li><a><img src="./immagini/icone/insta.png" alt="icona_instagram"></a></li>
-                    <li><a><img src="./immagini/icone/youtube.png" alt="icona_youtube"></a></li>
+                    <li><a href="https://www.facebook.com"><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="./immagini/icone/insta.png" alt="icona_instagram"></a></li>
+                    <li><a href="https://www.youtube.com/"><img src="./immagini/icone/youtube.png" alt="icona_youtube"></a></li>
                 </ul>
             </div>
             <div class='box1'>

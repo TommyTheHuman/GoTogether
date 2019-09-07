@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Form Di Registrazione</title>
-	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
+	<link rel="icon" href="../immagini/faveicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../css/form.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="../css/normalize/normalize.css" type="text/css" media="screen">

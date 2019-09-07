@@ -26,7 +26,7 @@ header {}
     display: inline-block;
 }
 
-.mainNav > .logo > a img {
+.mainNav > .logo > a img, .mainNav > .logo > img {
     max-width: 100%;
     max-width: 47px;
 }
@@ -50,7 +50,7 @@ header {}
     margin-bottom: 0;
 }
 
-.mainNav .voices a {
+.mainNav .voices a, .mainNav .voices li p {
     color: #ff4c2b;
     text-decoration: none;
 }
@@ -67,6 +67,7 @@ header {}
 	width: 50px;
 	height: 50px;
 	margin-left: 10px;
+	cursor: pointer;
 }
 
 /* form */

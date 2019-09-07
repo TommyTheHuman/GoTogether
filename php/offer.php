@@ -17,7 +17,7 @@
 	<meta name="author" content="PWEB">
 	<meta name="keywords" content="proposta">
 	<title>Form di Proposta</title>
-	<link rel="shortcut icon" type="image/x-icon" href="./css/img/favicon.ico" />
+	<link rel="icon" href="../immagini/faveicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="../css/form.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="../css/formReset.css" type="text/css" media="screen">
 </head>

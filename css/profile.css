@@ -214,6 +214,10 @@
     font-weight: 700;
     font-size: 14px;
 }
+
+.partecipanti, .immagine_modal {
+	cursor: pointer;
+}
 	
 /* tab button*/
 
@@ -438,6 +442,7 @@
 .preventScroll {
 	overflow: hidden;
 }
+
 
 /* Image Upload*/
 

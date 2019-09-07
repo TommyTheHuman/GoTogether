@@ -289,7 +289,7 @@
                                 </div>
                                 <div class="row">
                                     <form action="./php/offeraccettation.php?proposta='.$idproposta.'&prop='.$idutente.'" name="mio_form" method="post">
-                                        <input name="bottone_sottometti" value="Partecipa" type="submit">&nbsp;
+                                        <input name="bottone_sottometti" value="Partecipa" type="submit">;
                                     </form>
                                 </div>
                             </div>
