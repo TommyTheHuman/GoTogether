@@ -50,13 +50,49 @@
         </nav>
     </header>
     <main class="mainContainer">
+	 <aside id="Ricerca" class="ricerca">
+            <div class="form">
+                <form name="filtro">
+                    <div>
+                        <label for="searchNazione">Nazione</label>
+                        <input type="text" placeholder="Nazione" id="searchNazione" name="searchNazione">
+                    </div>
+                    <button class="invisibleTrigger button" type="button">Ulteriori opzioni</button>
+                    <div>
+                        <div>
+                            <label for="searchCitta">Citt&agrave;</label>
+                            <input type="text" placeholder="Città" id="searchCitta" name="searchCitta">
+                        </div>
+                        <div>
+                            <label>
+                                Prezzo fino a:<br>
+                                <input type="range" value="500" name="voto" min="50" max="500" step="10" value="1" id="MaxPrice">
+                            </label>
+                            <span id="votoDisplay"></span>
+                        </div>
+                        <div>
+                            <label>Mese Partenza<br>
+                                <input type="date" id="Mese_partenza" min="" max="" onkeydown="return false">
+                            </label>
+                        </div>
+                        <div>
+                            <label>Mese Arrivo<br>
+                                <input type="date" id="Mese_arrivo">
+                            </label>
+                        </div>
+                    </div>
+                    <input type="submit" class="button button_cta" value="Cerca" id="subNazione">
+                    <button class="DeleteSearch" id="DeleteSearch" type="button">Cancella Ricerca</button>
+                </form>
+            </div>
+        </aside>
         <div>
-           <section id="print"></section>
             <section  class="proposte">
                 <?php
                 ProposteAdmin();
-            ?>
+				?>
             </section>
+			<section id="print" class="print"></section>
         </div>
     </main>
     <footer id="contatti">
@@ -79,4 +115,5 @@
     <script src="./js/appear.js"></script>
     <script src="./js/logout.js"></script>
     <script src="./js/ScrollToTop.js"></script>
+	<script src="./js/search.js"></script>
 </body>

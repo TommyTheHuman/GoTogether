@@ -1,4 +1,5 @@
 <?php
+	session_start();
     include_once"./dbconfig.php";
     include"./dbmanager.php";
     $json = json_decode(file_get_contents('php://input'));
@@ -87,11 +88,16 @@ $sql = $query;
                                         <p>'.$Costo.'</p>
                                     </div>
                                 </div>
-                                <div class="row">
+								<div class="row">';
+		if($_SESSION['client'] == "Admin"){
+			echo '<button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$idproposta.'\'">Elimina</button>';
+		}else{
+			echo'
                                     <form action="./php/offeraccettation.php?proposta='.$idproposta.'&prop='.$idutente.'" name="mio_form" method="post">
                                         <input name="bottone_sottometti" value="Partecipa" type="submit">&nbsp;
-                                    </form>
-                                </div>
+									</form>';
+		}
+         echo'                      </div>
                             </div>
                         </div>';
         }
