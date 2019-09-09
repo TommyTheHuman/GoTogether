@@ -18,7 +18,15 @@
         
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
-        $allowed = array('jpg', 'jpeg', 'png');
+		$allowed = array('jpg', 'jpeg', 'png');
+		
+		$pathOk = str_replace("php","",getcwd());
+		$path1 = $pathOk . "upload/profile" . $id . ".jpg";
+		$path2 = $pathOk . "upload/profile" . $id . ".jpeg";
+		$path3 = $pathOk . "upload/profile" . $id . ".png";
+		unlink($path1);
+		unlink($path2);
+		unlink($path3);
         
         if(in_array($fileActualExt, $allowed)){
             if($fileError === 0){
