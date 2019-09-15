@@ -2,7 +2,7 @@
     session_start();
     include_once 'dbconfig.php';
     $id = $_SESSION['id'];
-    if(isset($_POST['invio'])){
+    if(isset($_POST['invio']) && $_FILES['file']['name'] != ""){
         $file=$_FILES['file'];
         
         define('KB', 1024);
@@ -47,5 +47,7 @@
         } else{
             header("Location: ../profilo.php?errore=immagine non supportata");
         }
-    }
+    } else {
+		 header("Location: ../profilo.php?errore=immagine non caricata");
+	}
 ?>

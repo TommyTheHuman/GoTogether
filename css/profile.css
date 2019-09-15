@@ -400,7 +400,8 @@ input[type=file] {
 	cursor: pointer;
 }
 
-#buttons input {
+.cambioimmagine #buttons input,
+.cambiopassword #button_pass input {
 	cursor: pointer;
 	border: solid 2px #909090;
 	border-radius: 3px;
@@ -411,6 +412,37 @@ input[type=file] {
 .immagine_modal {
 	width: 20px;
 	height: 20px;
+}
+
+/* Password Reset */
+
+.cambiopassword {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	max-width: 300px;
+}
+
+#button_pass {
+	margin-bottom: 20px;
+}
+
+.cambiopassword #button_pass input {
+	width: 120px;
+}
+
+.cambiopassword>form label {
+	font-weight: 700;
+	font-size: 13px;
+	margin-top: 10px;
+}
+
+.cambiopassword #vecchiapass, .cambiopassword #nuovapass {
+	font-size: 16px;
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+	margin-top: 4px;
+	color: #666;
 }
 
 
