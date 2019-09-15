@@ -52,7 +52,8 @@ function authenticate ($email, $password){
             $userRow = mysqli_fetch_row($ris);
             $_SESSION['nome']=$userRow[1];
             $_SESSION['cognome']=$userRow[2];
-            $_SESSION['immagine']=$userRow[6];
+			$_SESSION['immagine']=$userRow[6];
+			$_SESSION['client'] = "user";
             return $userRow[0];
         }
 	}

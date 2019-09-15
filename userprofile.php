@@ -38,7 +38,7 @@
     <header>
         <nav class="mainNav">
             <div class="logo">
-                <a href="./index.php">
+                <a href="./homepage.php">
                     <img alt="logo" src="./immagini/logoicon.png">
                 </a>
             </div>

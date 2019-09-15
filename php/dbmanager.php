@@ -6,7 +6,8 @@
 		global $conn;
         $proposte="select u.nome,u.cognome,u.image,p.Nazione,p.Citta,p.DataInizio,p.DataFine,p.Prezzo,(p.NumPersone-p.PersoneOra) as PostiDisponibili,u.id,p.IdProposta,p.Descrizione,p.titoloViaggio,p.image
         from proposte p inner join utente u on u.id=p.IdProponente
-        order by p.IdProposta;";
+		order by p.IdProposta
+		limit 15;";
         $risultato = mysqli_query($conn, $proposte);    
         while($riga=mysqli_fetch_row($risultato)) {
             $NomeProponente=$riga[0];
@@ -124,7 +125,11 @@
                     where pa.visualizzato=0
                     and pa.idproponente='$id';";
 		$risultato = mysqli_query($conn, $proposte);
-		   echo '<div class=\'proposte_da_accettare\'>';
+		echo '<div class=\'proposte_da_accettare\'>';
+		$num_righe = mysqli_num_rows($risultato);
+		if($num_righe > 0){
+			echo '<h1 class="titolo_sezione">Proposte Da Accettare</h1>';
+		}
         while($riga=mysqli_fetch_row($risultato)){
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
@@ -307,6 +312,10 @@
         order by p.IdProposta;";
 		$risultato = mysqli_query($conn, $proposte); 
 		echo"<div class='proposte'>";   
+		$num_righe = mysqli_num_rows($risultato);
+		if($num_righe > 0){
+			echo '<h1 class="titolo_sezione">Proposte dell\'utente</h1>';
+		}
         while($riga=mysqli_fetch_row($risultato)) {
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
@@ -515,7 +524,11 @@
 				FROM feedback f inner join utente u on u.id = f.idrecensore
 				WHERE f.idrecensito = ".$id.";";
         $query = mysqli_query($conn, $sql);
-        echo '<div class="recensioni">';
+		$num_righe = mysqli_num_rows($query);
+		if($num_righe > 0){
+			echo '<h1 class="titolo_sezione">Recensioni dell\'utente</h1><br>';
+		}
+		echo '<div class="recensioni">';
         while($riga=mysqli_fetch_row($query)){
 			$voto = $riga[0];
 			$commento = $riga[1];
@@ -530,6 +543,46 @@
                             </div>
                             <div class="recensore">
 								<div class="immagine"><a href="./userprofile.php?id='.$idRecensore.'"><img class="RoundImage"
+										alt="Immagine_Profilo" src="./upload/'.$immagine.'"></div>
+                                <p class="nome">'.$nome.' '.$cognome.'</p></a>
+                            </div>
+                        </div>
+						<div class="rows">
+							<div class="voto">';
+								stelle($voto);
+			echo			"</div>
+						</div>
+					</div>";
+        }
+        echo '</div>';
+	}
+
+	function recensioniProprie() {
+		global $conn;
+        $id = $_SESSION['id'];
+        $sql= "SELECT f.voto, f.commento, u.nome, u.cognome, u.image, f.idrecensore
+				FROM feedback f inner join utente u on u.id = f.idrecensore
+				WHERE f.idrecensito = ".$id.";";
+        $query = mysqli_query($conn, $sql);
+		$num_righe = mysqli_num_rows($query);
+		if($num_righe > 0){
+			echo '<h1 class="titolo_sezione">Recensioni</h1><br>';
+		}
+		echo '<div class="recensioni">';
+        while($riga=mysqli_fetch_row($query)){
+			$voto = $riga[0];
+			$commento = $riga[1];
+			$nome = $riga[2];
+			$cognome = $riga[3];
+			$immagine = $riga[4];
+			$idRecensore = $riga[5];
+			echo    '<div class="recensione">
+						<div class="rows">
+                            <div class="commento">
+                                <p>'.$commento.'</P>
+                            </div>
+                            <div class="recensore">
+								<div><a href="./userprofile.php?id='.$idRecensore.'"><img class="RoundImage"
 										alt="Immagine_Profilo" src="./upload/'.$immagine.'"></div>
                                 <p class="nome">'.$nome.' '.$cognome.'</p></a>
                             </div>

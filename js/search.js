@@ -199,3 +199,13 @@ function max_date(){
 };
 window.onLoad = current_date();
 window.onLoad = max_date();
+
+
+var mySlider = document.getElementById('MaxPrice');
+var Prezzo = document.getElementById('PrezzoScelto');
+
+function showValue() {
+	Prezzo.innerHTML = mySlider.value;
+}
+window.onLoad = showValue();
+mySlider.addEventListener('input', showValue, false);

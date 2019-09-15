@@ -27,7 +27,7 @@
     <?php include_once './include/head.html' ?>
 	<!-- css custom -->
     <link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="./css/HomePage.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/HomePage.css" type="text/css" media="screen">
 </head>
 
 <body id="bod" class="contenitore">
@@ -71,9 +71,9 @@
                         <div>
                             <label>
                                 Prezzo fino a:<br>
-                                <input type="range" value="500" name="voto" min="50" max="500" step="10" value="1" id="MaxPrice">
+                                <input type="range" value="500" name="prezzo" min="50" max="500" step="10" value="1" id="MaxPrice">
                             </label>
-                            <span id="votoDisplay"></span>
+                            <span id="PrezzoScelto"></span>
                         </div>
                         <div>
                             <label>Mese Partenza<br>
@@ -101,7 +101,7 @@
         </div>
     </main>
     <footer id="contatti">
-        <section class="clearfix container">
+        <section>
             <div class='box1'>
                 <ul>
                     <li><a href="https://www.facebook.com"><img src="./immagini/icone/facebook.png" alt="icona_facebook"></a></li>
@@ -121,15 +121,4 @@
     <script src="./js/appear.js"></script>
     <script src="./js/logout.js"></script>
     <script src="./js/ScrollToTop.js"></script>
-    <script>
-        var mySlider = document.getElementById('MaxPrice');
-        var mySliderValue = document.getElementById('votoDisplay');
-
-        function showValue() {
-            mySliderValue.innerHTML = mySlider.value;
-        };
-        showValue();
-        mySlider.addEventListener("input", showValue, false);
-
-    </script>
 </body>

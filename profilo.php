@@ -23,7 +23,8 @@
 	<title>Profilo Personale</title>
 	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen"> <!-- css -->
+	<link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen"> <!-- css -->
 	<?php include_once './include/head.html' ?>
 </head>
 
@@ -79,6 +80,8 @@
 	<div class="tabcontent">
 		<?php PropostePartecipate(); ?>
 	</div>
+
+	<?php recensioniProprie() ?>
 
 	<div class="modal" id="modal">
 		<div class="modal__content">

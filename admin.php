@@ -66,9 +66,9 @@
                         <div>
                             <label>
                                 Prezzo fino a:<br>
-                                <input type="range" value="500" name="voto" min="50" max="500" step="10" value="1" id="MaxPrice">
+                                <input type="range" value="500" name="prezzo" min="50" max="500" step="10" value="1" id="MaxPrice">
                             </label>
-                            <span id="votoDisplay"></span>
+                            <span id="PrezzoScelto"></span>
                         </div>
                         <div>
                             <label>Mese Partenza<br>

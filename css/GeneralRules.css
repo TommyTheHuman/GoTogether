@@ -2,6 +2,71 @@ body {
     margin: 0;
 }
 
+/* nav */
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 2px solid #f88860;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.mainNav > .logo {
+    display: inline-block;
+    max-width: 80px;
+    box-sizing: border-box;
+}
+
+.mainNav > .logo > a {
+    display: inline-block;
+}
+
+.mainNav > .logo > a img, .mainNav > .logo img {
+    max-width: 100%;
+    max-width: 47px;
+}
+
+.mainNav > .voices,
+.mainNav > .voices li,
+.mainNav > .voices li a {
+    display: flex;
+    align-items: center
+}
+
+.mainNav > .voices ul {
+    list-style-type: none;
+    display: flex;
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.mainNav .voices .openmodal {
+	background-color: #f88860;
+	color:#fff;
+	padding:5px 10px;
+	border-radius: 3px;
+	margin-right: 20px;
+	font-size: 16px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.mainNav .voices a, .mainNav .voices p {
+    color: #f88860;
+    text-decoration: none;
+}
+
+.RoundImage {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
 /* FOOTER */
 footer {
     background-color: darkslategray;
@@ -57,12 +122,12 @@ footer div ul li a img {
     src: url(./font/Lato2OFL/Lato-Regular.ttf) format("truetype");
 }
 
-header nav ul li.AzoSans {
+header nav ul li.NotoSans {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
 }
 
-.AzoSans {
+.NotoSans {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
 }
@@ -70,3 +135,55 @@ header nav ul li.AzoSans {
 p.Lato {
     font-family: "Lato-Regular", Verdana, Tahoma;
 }
+
+/* FeedBack */
+
+.recensioni h1,
+h1 {
+	text-align: center;
+}
+
+.recensioni {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1090px;
+	margin: 0 auto;
+}
+
+.recensione {
+	background-color: #f5f5f5;
+	width: 100%;
+	max-width: 300px;
+	padding: 10px;
+	margin: 10px 20px;
+	border-radius: 5px;
+}
+
+.RoundImage {
+	margin-left: 0px;
+}
+
+.recensore {
+	text-align: center;
+}
+
+.recensione .rows:first-child .recensore a {
+	text-decoration: none;
+	color: black;
+}
+
+.recensione .rows:first-child {
+	display: flex;
+	justify-content: space-between;
+}
+
+.voto {
+	display: flex;
+}
+
+.voto .stella {
+	height: 20px;
+	width: 20px;
+}
+
