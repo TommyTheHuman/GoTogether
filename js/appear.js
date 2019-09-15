@@ -8,7 +8,6 @@ var showInvisible = function() {
     }
 };
 
-
 for (var i = 0; i < invisibleTrigger.length; i++) {
     invisibleTrigger[i].addEventListener('click', showInvisible, false);
 }

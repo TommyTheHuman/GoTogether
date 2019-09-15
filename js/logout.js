@@ -10,8 +10,6 @@ function userLogout() {
 
         // gestisco la risposta
         xhr.onreadystatechange = function () {
-
-            // Process our return data
             if (xhr.readyState === 4 && xhr.status === 200) {
                 if (xhr.responseText == 'userLoggedOut') {
                     window.location.href = './index.php';
@@ -21,10 +19,8 @@ function userLogout() {
                     console.log('Logout failed 2 ');
                 }
             } else {
-                // This will run when it's not
                 console.log('Logout server response failed');
             }
-
         };
     }
 };

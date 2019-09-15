@@ -20,11 +20,8 @@ var isScrolling;
 
 function setEvent(){
 	window.addEventListener('scroll', function ( event ) {
-		// Clear our timeout throughout the scroll
 		window.clearTimeout( isScrolling );
-		// Set a timeout to run after scrolling ends
 		isScrolling = setTimeout(function() {
-			// Run the callback
 			if (cardLoader) {
 				checkCardPosition();
 			}
@@ -151,26 +148,17 @@ function cerca() {
 
         // gestisco la risposta
         xhr.onreadystatechange = function () {
-
-            // Process our return data
             if (xhr.readyState === 4 && xhr.status === 200) {
-                //console.log('Response 200: ' + xhr.responseText);
 				var requestResponse = xhr.responseText;
                 document.getElementById('print').innerHTML = document.getElementById('print').innerHTML + requestResponse;
 				cancella();
 				minimo += massimo;
-				cardLoader = document.getElementsByClassName(
-						'card--loader'
-					)[0];
+				cardLoader = document.getElementsByClassName('card--loader')[0];
             } else {
-                // This will run when it's not
                 console.log('Service temporarly unavaible');
             }
 
         };
-
-  
-
 };
 
 function current_date() {
@@ -185,8 +173,7 @@ function current_date() {
 function max_date(){
     var max_date = new Date();
     var dd = max_date.getDate();
-    var mm = max_date.getMonth() + 1; //January is 0!
-
+    var mm = max_date.getMonth() + 1;
     var yyyy = max_date.getFullYear() + 1;
     if (dd < 10) {
         dd = '0' + dd;

@@ -36,21 +36,21 @@
 				<input name="email" size="30" type="email" placeholder="Es: mario.rossi@gmail.com"><br>
 
 				<label>
-					Data di Nascita:<br></label>
+					Data di Nascita: *<br></label>
 				<input name="birthDate" type="date" max="" onkeydown="return false"><br>
 
 				<div class="sesso">
 					<div class="maschio">
-						<p>Maschio</p>
+						<p>Maschio *</p>
 						<input type="radio" name="Sesso" id="Maschio" value="Maschio">
 					</div>
 					<div class="femmina">
-						<p>Femmina</p>
+						<p>Femmina *</p>
 						<input type="radio" name="Sesso" id="Femmina" value="Femmina">
 					</div>
 				</div>
 			</div>
-			<div style="font-size:9pt; float: none; padding: 0px; margin: 0px; color: red">
+			<div>
 				<sup>*</sup> Campi obbligatori
 			</div><br>
 			<div id="form_right">

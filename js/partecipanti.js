@@ -14,10 +14,7 @@ function modalPartecipanti() {
 }
 
 function getPartecipanti(elementoPartecipanti) {
-	// prendo id evento
 	var idPartecipante = elementoPartecipanti.getAttribute('id');
-
-	//call AJAX
 	var xhr = new XMLHttpRequest();
 	var urlToSend = './php/partecipanti.php';
 	xhr.open('POST', urlToSend, true);
@@ -25,12 +22,10 @@ function getPartecipanti(elementoPartecipanti) {
 	xhr.onload = function() {
 		// Process our return data
 		if (xhr.readyState === 4 && xhr.status === 200) {
-			// This will run wherequest is successful
 			console.log('Response 200: ' + xhr.responseText);
 			var requestResponse = xhr.responseText;
 			modalBoxContent.innerHTML = requestResponse;
 		} else {
-			// This will run when it's not
 			console.log('The request failed!');
 		}
 	};

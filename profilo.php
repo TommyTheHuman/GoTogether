@@ -85,9 +85,10 @@
 
 	<div class="modal" id="modal">
 		<div class="modal__content">
-			<button class="openmodal" type="button"><img alt="icona_chiusura" class="immagine_modal" src="./immagini/icone/x.png"></button>
+			<button class="openmodal" type="button"><img alt="icona_chiusura" class="immagine_modal"
+					src="./immagini/icone/x.png"></button>
 			<div class="modal__innerContent">
-				
+
 			</div>
 		</div>
 	</div>
@@ -97,4 +98,5 @@
 	<script src="./js/modal.js"></script>
 	<script src="./js/partecipanti.js"></script>
 </body>
+
 </html>
