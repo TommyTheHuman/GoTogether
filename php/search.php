@@ -89,7 +89,7 @@ $sql = $query;
                                     </div>
                                 </div>
 								<div class="row">';
-		if($_SESSION['client'] == "Admin"){
+		if(isset($_SESSION['client'])){
 			echo '<button type="button" onclick="location.href=\'./php/offerelimination.php?proposta='.$idproposta.'\'">Elimina</button>';
 		}else{
 			echo'
