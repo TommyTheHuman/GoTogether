@@ -20,7 +20,7 @@ function getPartecipanti(elementoPartecipanti) {
 	xhr.open('POST', urlToSend, true);
 	xhr.send(idPartecipante);
 	xhr.onload = function() {
-		// Process our return data
+		// Gestisco la risposta
 		if (xhr.readyState === 4 && xhr.status === 200) {
 			console.log('Response 200: ' + xhr.responseText);
 			var requestResponse = xhr.responseText;

@@ -35,10 +35,10 @@ function login($email, $password){
     		}
 
     }else{
-        return 'You should insert something';
+        return 'Devi riempire i campi';
     }
     	
-    	return 'Username and password not valid.';
+    	return 'Username o password non validi';
 	
 }
 

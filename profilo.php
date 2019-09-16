@@ -22,20 +22,12 @@
 	<meta charset="utf-8">
 	<title>Profilo Personale</title>
 	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="./css/profile.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen"> <!-- css -->
 	<?php include_once './include/head.html' ?>
 </head>
 
-<body onload=" <?php
-        if(isset($_GET["errore"]) && ($_GET["errore"]=='immagine non supportata' || $_GET["errore"]=='Il file è troppo grande' || $_GET["errore"]=="Si è presentato un errore durante il caricamento"))
-        {
-            $errore = $_GET["errore"];
-            print("alert('$errore');window.location.href='./profilo.php'");
-            
-        }
-    ?>">
+<body>
 	<header>
 		<nav class="mainNav">
 			<div class="logo">

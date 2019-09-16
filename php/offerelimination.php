@@ -23,8 +23,8 @@
           WHERE Idproposta= '$idproposta';";
 	$risultato = mysqli_query($conn, $sql);
 	if(isset($_SESSION['client'])){
-		header('Location: ../admin.php');
+		header('Location: ../admin.php?msg=Eliminazione Avvenuta con successo');
 	}else{
-		header('Location: ../profilo.php');
+		header('Location: ../profilo.php?msg=Eliminazione Avvenuta con successo');
 	}
 ?>

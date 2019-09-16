@@ -26,11 +26,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Profilo Utente</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="./immagini/faveicon.ico" type="image/x-icon" />
 	<?php include_once './include/head.html' ?>
-	<link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen"> <!-- css -->
-	<link rel="stylesheet" href="./css/userprofile.css" type="text/css" media="screen"> <!-- css -->
+	<!-- CSS custom -->
+	<link rel="stylesheet" href="./css/GeneralRules.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./css/userprofile.css" type="text/css" media="screen">
 </head>
 
 <body>

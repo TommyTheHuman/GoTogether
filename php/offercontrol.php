@@ -39,17 +39,17 @@
                         move_uploaded_file($fileTmpName, "$uploads_dir/$fileNameNew");
 
                     }else{
-                        echo"errore1";
+                        header("Location: ../homepage.php?errore=Il file è troppo grande");
                     }
                 }else{
-                    echo"errore2";
+                    header("Location: ../homepage.php?errore=Si è presentato un errore durante il caricamento");
                 }
             }else{
-            echo"errore3";
+            header("Location: ../homepage.php?errore=immagine non supportata");
         }
     
 	$sql="insert into proposte (IdProponente, Nazione, Citta, DataInizio, DataFine, Prezzo, NumPersone, titoloViaggio, image, descrizione)values('$id','$Nazione','$citta','$DataPartenza','$DataRitorno','$Prezzo','$NumeroPersone', '$Titolo', '$fileNameNew', '$Descrizione');";
 	echo $sql;
     mysqli_query($conn,$sql);
-    header("location: ../homepage.php?");
+    header("location: ../homepage.php?msg=Proposta creata con successo");
 ?>

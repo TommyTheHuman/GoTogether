@@ -23,5 +23,5 @@
             and IdRichiedente = '$Idrichiedente';";
     }
     $risultato = mysqli_query($conn, $sql);
-    header('Location: ../profilo.php');
+    header('Location: ../profilo.php?mag=Hai accettato-rifiutato la proposta');
 ?>

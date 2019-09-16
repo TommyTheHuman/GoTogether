@@ -44,7 +44,7 @@
 					Data di ritorno:<br></label>
 				<input name="ritorno" id="ritorno" type="date" min="" onkeydown="return false"><br>
 				<label for="country">Country<br></label>
-
+				<!-- Menù a tendina trovato su internet -->
 				<select id="country" name="country" class="form-control">
 					<option value="Scegli_la_Nazione">Scegli la Nazione</option>
 					<option value="Afghanistan">Afghanistan</option>

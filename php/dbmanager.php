@@ -13,9 +13,6 @@
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
             $ImmagineProponente=$riga[2];
-            if($ImmagineProponente==NULL){
-                $ImmagineProponente='placeholder.png';
-            }
             $Nazione=$riga[3];
             $Citta=$riga[4];
             $DataInizio=$riga[5];
@@ -133,9 +130,6 @@
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
             $ImmagineProponente=$riga[2];
-            if($ImmagineProponente==NULL){
-                $ImmagineProponente='placeholder.png';
-            }
             $Idrichiedente=$riga[3];
             $Citta=$riga[4];
 			$DataInizio=$riga[5];
@@ -237,9 +231,6 @@
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
             $ImmagineProponente=$riga[2];
-            if($ImmagineProponente==NULL){
-                $ImmagineProponente='placeholder.png';
-            }
             $Nazione=$riga[3];
             $Citta=$riga[4];
             $DataInizio=$riga[5];
@@ -426,9 +417,6 @@
             $NomeProponente=$riga[0];
             $CognomeProponente=$riga[1];
             $ImmagineProponente=$riga[2];
-            if($ImmagineProponente==NULL){
-                $ImmagineProponente='placeholder.png';
-            }
             $Nazione=$riga[3];
             $Citta=$riga[4];
             $DataInizio=$riga[5];

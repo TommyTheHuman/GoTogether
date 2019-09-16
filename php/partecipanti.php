@@ -1,5 +1,5 @@
 <?php 
-include_once'dbconfig.php';
+	include_once'dbconfig.php';
 	include_once'sessioncontrol.php';
 	
 	$dataReceived = file_get_contents('php://input');

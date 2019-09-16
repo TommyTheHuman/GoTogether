@@ -24,7 +24,6 @@ if(mysqli_num_rows($control) > 0){
 }else{
     echo '<script>alert("Non puoi lasciare una recensione se non hai interagito con la persona");
     window.location.replace("../userprofile.php?id='.$idrecensito.'");</script>';
-    //header("Location: ../userprofile.php?id=$idrecensito");
 }
 
 ?>
