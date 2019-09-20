@@ -15,13 +15,12 @@
 		<form action="./logincontrol.php" name="mio_form" method="post">
 			<div>
 				<label>
-					E-mail: *<br></label>
-				<input name="email" size="30" type="email" placeholder="Es: mario.rossi@gmail.com"
-					value="tommyc98@yahoo.it"><br>
+					E-mail: <br></label>
+				<input name="email" size="30" type="email" placeholder="Es: mario.rossi@gmail.com"><br>
 
 				<label>
-					Password: *<br></label>
-				<input name="password" size="30" type="password" value="111"><br>
+					Password: <br></label>
+				<input name="password" size="30" type="password"><br>
 			</div>
 			<br>
 			<div id="form_right">

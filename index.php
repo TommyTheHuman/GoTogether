@@ -60,7 +60,8 @@
 		</div>
 		<div class="box">
 			<p class="Lato">
-				GoTogether è nato dall'esigenza di colmare la voglia di viaggiare del singolo individuo. Nato da una semplice idea e successivamente reso realtà.
+				Nasciamo come il frutto della passione più bella che esista: viaggiare.
+				Visitare nuovi paesi, scoprire culture diverse e condividere nuove esperienze con altre persone. Non sempre trovare il compagno di viaggi ideale è facile per tutti, per questo motivo go together ti offre la possibilità di trovare in breve tempo il compagno di avventura che fa al caso tuo per affrontare con felicità e entusiasmo qualsiasi tipo di viaggio.
 			</p>
 		</div>
 	</section>
