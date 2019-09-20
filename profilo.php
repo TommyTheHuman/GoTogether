@@ -54,8 +54,6 @@
 	<?php
 		Bandiere();
 		ProposteDaAccettare();
-		
-		
 	?>
 	<div class="tab">
 		<button class="tablinks active">

@@ -22,7 +22,7 @@
           FROM proposte
           WHERE Idproposta= '$idproposta';";
 	$risultato = mysqli_query($conn, $sql);
-	if(isset($_SESSION['client'])){
+	if($_SESSION['client'] == "Admin"){
 		header('Location: ../admin.php?msg=Eliminazione Avvenuta con successo');
 	}else{
 		header('Location: ../profilo.php?msg=Eliminazione Avvenuta con successo');

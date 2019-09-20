@@ -1,6 +1,6 @@
 <?php
     include_once'dbconfig.php';
-    include_once'sessioncontrol.php';
+	include_once'sessioncontrol.php';
     
 	function ProposteAdmin() {
 		global $conn;
@@ -283,7 +283,7 @@
                                 </div>
                                 <div class="row">
                                     <form action="./php/offeraccettation.php?proposta='.$idproposta.'&prop='.$idutente.'" name="mio_form" method="post">
-                                        <input name="bottone_sottometti" value="Partecipa" type="submit">;
+                                        <input name="bottone_sottometti" value="Partecipa" type="submit">
                                     </form>
                                 </div>
                             </div>

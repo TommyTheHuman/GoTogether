@@ -64,8 +64,10 @@ function clearBox() {
 
 function clear(){
     mostra();
-    clearBox();
-    DeleteSearch.classList.remove('DeleteSearch--isVisible');
+	clearBox();
+	minimo = 0;
+	DeleteSearch.classList.remove('DeleteSearch--isVisible');
+	subNazione.addEventListener('click', showButton);
 }
 
 window.onLoad = mostra();
@@ -151,7 +153,6 @@ function cerca() {
             if (xhr.readyState === 4 && xhr.status === 200) {
 				var requestResponse = xhr.responseText;
                 document.getElementById('print').innerHTML = document.getElementById('print').innerHTML + requestResponse;
-				cancella();
 				minimo += massimo;
 				cardLoader = document.getElementsByClassName('card--loader')[0];
             } else {

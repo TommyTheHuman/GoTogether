@@ -7,9 +7,6 @@ $idrecensito = $_GET['idprop'];
 $idrecensore = $_GET['idutente'];
 $voto = $_POST['Voto_Generale'];
 $commento = mysqli_real_escape_string($conn,$_POST['commento']);
-echo $voto;
-echo $commento;
-echo $idrecensito;
 $controllo = "select idproponente, idrichiedente
 from propostedaaccettare
 where visualizzato = 1

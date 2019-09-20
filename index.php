@@ -59,16 +59,9 @@
 			<h2 class="NotoSans">Chi Siamo</h2>
 		</div>
 		<div class="box">
-			<p class="Lato">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mattis, felis at dignissim
-				volutpat, nunc dolor mollis tellus, ac ultrices purus diam quis enim. Maecenas mattis tincidunt ex, at
-				facilisis dui rhoncus non. Aenean maximus, augue ac pellentesque convallis, mi mauris egestas neque, sit
-				amet fermentum augue ex quis orci. Nullam non eros in neque vehicula ultrices non eget tellus. Maecenas
-				ac scelerisque quam. Ut porta facilisis neque at sollicitudin. Pellentesque hendrerit sit amet justo et
-				feugiat. Maecenas mattis accumsan malesuada. Fusce vulputate lacinia diam et porttitor. Phasellus lacus
-				diam, elementum sed elit ac, imperdiet ornare turpis. Nulla feugiat nulla ac erat mollis mattis. Aenean
-				feugiat ultricies arcu ac lacinia. Maecenas in quam vitae neque ullamcorper viverra. Donec ac vulputate
-				velit. Integer ullamcorper neque in ante bibendum, pretium luctus turpis lacinia. Suspendisse enim
-				mauris, porta vitae faucibus eu, fringilla eget lacus.</p>
+			<p class="Lato">
+				GoTogether è nato dall'esigenza di colmare la voglia di viaggiare del singolo individuo. Nato da una semplice idea e successivamente reso realtà.
+			</p>
 		</div>
 	</section>
 	<section id="posti" class="container clearfix boxTesto">
@@ -84,7 +77,7 @@
 			<h2 class="NotoSans">Perchè Sceglierci</h2>
 		</div>
 		<div class="box">
-			<p class="Lato">Go together è la soluzione per tutti coloro che non se la sentono di viaggiare in solitaria: vi ricordate di quella volta in cui avreste voluto passare la vostra settimana di ferie in giro per il mondo? Proprio quella settimana che alla fine avete passato solo nella vostra città perché nessuno dei vostri amici vi ha dato la sua disponibilità.
+			<p class="Lato">GoTogether è la soluzione per tutti coloro che non se la sentono di viaggiare in solitaria: vi ricordate di quella volta in cui avreste voluto passare la vostra settimana di ferie in giro per il mondo? Proprio quella settimana che alla fine avete passato solo nella vostra città perché nessuno dei vostri amici vi ha dato la sua disponibilità.
 			Grazie a noi trovare dei compagni di viaggio sarà facilissimo.</p>
 		</div>
 	</section>
