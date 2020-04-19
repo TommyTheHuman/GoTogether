@@ -14,6 +14,9 @@
     $user->cognome = $_SESSION["cognome"];
     $user->profileImage = './upload/'.$_SESSION['immagine'];
 
+
+
+	
 ?>
 
 <!DOCTYPE html>
